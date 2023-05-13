@@ -1,0 +1,133 @@
+
+
+@media screen and (min-width: 400px){
+
+.image_tintin {
+    display: block;
+    width: 30%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.personnages__synopsis {
+    color: rgb(255, 255, 255);
+    padding: 3%;
+    font-family: cursive;
+}
+
+.image_tintin2{
+    display: block;
+    width: 15%;
+    margin: 0 auto;
+    border-radius: 10px;
+
+}
+.image_tintin3 {
+    display: block;
+    width: 30%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.image_tintin4 {
+    display: block;
+    width: 30%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.image_tintin5 {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.image_tintin6 {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+.card_movie_container_tintin {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    background: rgb(19, 45, 86);
+    width: 100%;        
+    font-family: cursive;
+    border-radius: 30px;
+    margin: 1px;
+    border: 5px solid rgb(14, 6, 6);
+}
+
+}
+
+@media screen and (max-width: 500px){
+    .card_movie_container_tintin {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        background: rgb(19, 45, 86);
+        width: 100%;        
+        font-family: cursive;
+        border-radius: 30px;
+        margin: 1px;
+        border: 5px solid rgb(14, 6, 6);
+    }
+    
+    .image_tintin {
+        display: block;
+        width: 90%;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+
+    .image_tintin2{
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .image_tintin3{
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .image_tintin4{
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .image_tintin5{
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .image_tintin6{
+        display: block;
+        width: 70%;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+
+
+
+
+    
+    
+    
+
+}

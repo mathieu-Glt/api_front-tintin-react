@@ -1,0 +1,126 @@
+a.link-favourite {
+    margin-left: 0;
+    width: 10px;
+}
+
+.displayMessage {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    color: black;
+    padding: 2%;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.transDisplayMessage {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    color: black;
+    padding: 2%;
+    font-size: 25px;
+    border-radius: 10px;
+    transition: all 2s ease;
+    opacity: 0;
+
+}
+
+div.img {
+    height: 100px;
+    width: 100px;
+}
+
+
+@media screen and (min-width: 400px){
+    .card_movie_container_top{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4px;
+        background: black;
+        color: rgb(17, 95, 159);
+        font-family: cursive;
+        width: 450px;
+        border-radius: 30px;
+        border: 1px solid rgb(14, 6, 6);
+        margin: 10px;
+    }
+    .movies__synopsis_acceuil{
+        padding: 4%;
+    }
+
+    .image_database_top_rated{
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+    
+    }
+
+    .movies__synopsis{
+        // color: rgb(61, 123, 59);
+        padding: 2%;
+        // font-size: 20px;
+    }
+
+    .movies__buttons_acceuil{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 30px;
+    }
+
+
+    .star{
+        width: 190px;
+        margin-left: 100px;
+}
+    
+    
+}
+
+@media screen and (max-width: 400px){
+    .card_movie_container_top{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4px;
+        background: black;
+        color: rgb(81, 162, 94);
+        width: 450px;
+        border-radius: 30px;
+        border: 1px solid rgb(14, 6, 6);
+        margin: 10px;
+    }
+    .movies__synopsis_acceuil{
+        padding: 4%;
+    }
+
+    .image_database_top_rated{
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+    
+    }
+
+    .movies__synopsis{
+        padding: 2%;
+        font-size: 20px;
+    }
+
+    .movies__buttons_acceuil{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 30px;
+    }
+
+    .banner_button_acceuil{
+        margin: 30px;
+    }
+
+    .star{
+        width: 190px;
+        margin-left: 100px;
+}
+
+}

@@ -1,0 +1,192 @@
+.video-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0 10%;
+    padding: 3% 0 3%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    width: 100%;
+    color: white;
+    font-family: cursive;
+    animation:  colorb 10s ease infinite;
+
+    & > div, iframe {
+        border-radius: 8px;
+        overflow: hidden;
+        
+        & >div,  iframe {
+            // border: 2px solid red;
+
+    }}
+}
+
+.video-player {
+    background: black;
+    height: 600px;
+    // width: 80%;
+    // animation-name: color;
+    animation: color 10s ease infinite;
+}
+
+@keyframes color {
+    0% {
+        background: #128ad5;
+    }
+    20% {
+        background: #388cc4
+    }
+    40% {
+        background: #0656a1
+    }
+    60% {
+        background: #025cb0
+    }
+    80% {
+        background: #0f3c65
+    }
+    100% {
+        background: #133e67
+    }
+    
+}
+
+.displayMessage {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    color: black;
+    padding: 2%;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.transDisplayMessage {
+    position: absolute;
+    left: 100px;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    color: black;
+    // padding: 2%;
+    font-size: 25px;
+    border-radius: 10px;
+    transition: all 2s ease;
+    opacity: 0;
+
+}
+
+div.img {
+    height: 100px;
+    width: 100px;
+}
+
+@media screen and (max-width: 460px){
+
+.movie_container_favories{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+    background: black;
+    // color: rgb(238, 96, 2);
+    font-family: cursive;
+    width: 450px;
+    border-radius: 30px;
+    border: 3px solid rgb(194, 69, 11);
+    margin: 10px;
+
+}
+.image_database_favoris{
+    width: 70%;
+    margin: 10px auto;
+    border-radius: 10px;
+
+}
+
+.star h2{
+    color: red;
+}
+
+.star{
+    width: 50%;
+    margin: 1px auto;
+}
+
+.movies__buttons_favoris{
+    display: flex;
+    flex-wrap: wrap;
+    // padding: 20px;
+    margin: 5px auto;
+
+}
+
+.movies__buttons_favoris_lecture {
+    width: 30px;
+    margin: auto;
+}
+
+.movies__buttons_favoris{
+    display: flex;
+    flex-wrap: wrap;
+    // padding: 20px;
+
+}
+
+}
+
+
+@media screen and (min-width: 460px){
+
+    .movie_container_favories{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4px;
+        background: black;
+        color: rgb(238, 159, 2);
+        font-family: cursive;
+        width: 450px;
+        border-radius: 30px;
+        border: 3px solid rgb(194, 69, 11);
+        margin: 10px;
+    
+    }
+    .image_database_favoris{
+        width: 70%;
+        margin: 10px auto;
+        border-radius: 10px;
+    
+    }
+    
+    .star h2{
+        color: red;
+    }
+    
+    .star{
+        width: 50%;
+        margin: 1px auto;
+    }
+    
+    .movies__buttons_favoris{
+        display: flex;
+        flex-wrap: wrap;
+        // padding: 20px;
+        margin: 5px auto;
+    
+    }
+    
+    .movies__buttons_favoris_lecture {
+        width: 30px;
+        margin: auto;
+    }
+    
+    .movies__buttons_favoris{
+        display: flex;
+        flex-wrap: wrap;
+        // padding: 20px;
+    }
+    
+
+}

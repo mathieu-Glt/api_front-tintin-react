@@ -1,0 +1,158 @@
+@media screen and (min-width: 350px) {
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        margin: 10% 0 10%;
+        padding: 3% 0 3%;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        height: 800px;
+        width: 100%;
+        color: black;
+        font-family: cursive;
+        animation:  color 10s ease infinite;
+    
+        & > div, iframe {
+            border-radius: 8px;
+            overflow: hidden;
+            
+            & >div,  iframe {
+                height: 500px;
+                width:60%;
+                padding: 3px;
+                border-radius: 30px;
+                // border: 2px solid red;
+    
+            }
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width: 450px) {
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        margin: 10% 0 10%;
+        padding: 3% 0 3%;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        height: 800px;
+        width: 100%;
+        color: black;
+        font-family: cursive;
+        animation:  color 10s ease infinite;
+    
+        & > div, iframe {
+            border-radius: 8px;
+            overflow: hidden;
+            
+            & >div,  iframe {
+                height: 500px;
+                width:80%;
+                padding: 3px;
+                border-radius: 30px;
+                // border: 2px solid red;
+    
+            }
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width: 550px) {
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        height: 800px;
+        width: 100%;
+        color: black;
+        font-family: cursive;
+        animation:  colorb 10s ease infinite;
+    
+        & > div, iframe {
+            border-radius: 8px;
+            overflow: hidden;
+            
+            & >div,  iframe {
+                height: 500px;
+                width: 80%;
+                padding: 3px;
+                border-radius: 30px;
+                // border: 2px solid red;
+    
+            }
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width: 900px) {
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        height: 800px;
+        width: 100%;
+        color: black;
+        font-family: cursive;
+        animation:  colorb 10s ease infinite;
+    
+        & > div, iframe {
+            border-radius: 8px;
+            overflow: hidden;
+            width: 90%;
+
+            
+            & >div,  iframe {
+                height: 550px;
+                width: 130%;
+                padding: 3px;
+                // margin: auto;
+                border-radius: 30px;
+                // border: 2px solid red;
+    
+            }
+        }
+        
+    }
+    
+}
+
+
+
+@keyframes colorb {
+    0% {
+        background: #07074f;
+    }
+    20% {
+        background: #1d278c
+    }
+    40% {
+        background: #012f8c
+    }
+    60% {
+        background: #0e3484
+    }
+    80% {
+        background: #0e0b35
+    }
+    100% {
+        background: #122d4b
+    }
+
+}

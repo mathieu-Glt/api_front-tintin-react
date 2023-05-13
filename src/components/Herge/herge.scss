@@ -1,0 +1,167 @@
+
+
+.herge_container{
+    margin-bottom: 20px;
+
+}
+
+
+.video-player-container {
+    background: red;
+    width: 100%;
+    margin: 30% 0 10%;
+    padding: 3% 0 3%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & >  iframe {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 400px){
+    .card_movie_herge{
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 10px;
+
+    }
+    .image_herge1 {
+        width: 90%;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+    .image_herge2 {
+        width: 70%;
+        margin: 10px auto;
+        border-radius: 10px;
+    
+    }
+    
+    .image_herge3 {
+        width: 70%;
+        margin: 10px auto;
+        border-radius: 10px;
+    
+    }
+    
+    .image_herge4 {
+        width: 90%;
+        margin: 10px auto;
+        border-radius: 10px;
+    
+    }
+    
+
+
+    .card_movie_container_herge {
+        display: flex;
+        flex-direction: column;
+        padding: 3px;
+        background: rgb(19, 45, 86);
+        color: rgb(5, 115, 240);
+        width: 80%;
+        border-radius: 30px;
+        margin: 10px auto;
+    }
+    .movies__synopsis_herge{
+        font-size: 20px;
+        color: rgb(5, 115, 240);
+
+    }
+    
+    .image_herge {
+        width: 70%;
+        margin: 10px auto;
+    }
+    .video-player-container {
+        background: red;
+        margin: 10% 0 10%;
+        padding: 3% 0 3%;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > div, iframe {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    }
+    
+    
+}
+
+@media screen and (max-width: 400px){
+    .card_movie{
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    .image_herge1 {
+        width: 90%;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+    .image_herge2 {
+        width: 70%;
+        margin: 10px auto;
+        border-radius: 10px;
+    
+    }
+    
+    .image_herge3 {
+        width: 70%;
+        margin: 10px auto;
+        border-radius: 10px;
+    
+    }
+    
+    .image_herge4 {
+        width: 90%;
+        margin: 10px auto;
+        border-radius: 10px;
+    
+    }
+    
+
+
+    .card_movie_container_herge {
+        display: flex;
+        flex-direction: column;
+        padding: 3px;
+        color: rgb(5, 115, 240);
+        width: 80%;
+        border-radius: 30px;
+        margin: 10px auto;
+    }
+    .movies__synopsis_herge{
+        font-size: 20px;
+        color: rgb(5, 115, 240);
+
+    }
+    
+    .image_herge {
+        width: 70%;
+        margin: 10px auto;
+    }
+    .video-player-container {
+        background: red;
+        margin: 10% 0 10%;
+        padding: 3% 0 3%;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > div, iframe {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    }
+
+
+
+}

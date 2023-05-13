@@ -1,0 +1,85 @@
+@media screen and (max-width: 460px){
+
+.movie_container_panier{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+    background: rgb(88, 13, 13);
+    color: rgb(238, 171, 2);
+    font-family: cursive;
+    width: 400px;
+    border-radius: 30px;
+    border: 1px solid rgb(14, 6, 6);
+    margin: 10px;
+    border: 3px solid black;
+
+}
+.image_database_panier{
+    width: 50%;
+    margin: 10px  auto;
+    border-radius: 10px;
+    border: 2px solid rgb(184, 4, 4);
+
+}
+
+.pres-perso_panier{
+    background: black;
+    border-radius: 10px;
+
+
+}
+
+.button-delete_panier{
+    width: 30px;
+    margin: 0 auto;
+}
+
+.movies__buttons_panier{
+    width: 90%;
+}
+
+
+}
+
+@media screen and (min-width: 460px){
+
+    .movie_container_panier{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4px;
+        background: rgb(88, 13, 13);
+        color: rgb(238, 171, 2);
+        font-family: cursive;
+        width: 400px;
+        border-radius: 30px;
+        border: 1px solid rgb(14, 6, 6);
+        margin: 10px;
+        border: 3px solid black;
+    
+    }
+    .image_database_panier{
+        width: 50%;
+        margin: 10px  auto;
+        border-radius: 10px;
+        border: 2px solid rgb(184, 4, 4);
+    
+    }
+    
+    .pres-perso_panier{
+        background: black;
+        border-radius: 10px;
+    
+    
+    }
+    
+    .button-delete_panier{
+        width: 30px;
+        margin: 0 auto;
+    }
+    
+    .movies__buttons_panier{
+        width: 90%;
+    }
+    
+    
+    }

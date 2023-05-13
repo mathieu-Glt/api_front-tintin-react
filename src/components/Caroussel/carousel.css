@@ -1,0 +1,90 @@
+/* .carousel-container {
+  transition: all 1.5s ease;
+  opacity: 1;
+  margin: 0 auto;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: #ea6d40;
+  width: 50%;
+} */
+.movie_container {
+    /*p-3 card text-bg-dark mb-5 d-flex flex-row m-4 justify-content-center*/
+  padding: 3%;
+  background: rgb(63, 44, 44);
+  color:   #fdb12e;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 10%;
+  display: flex;
+  font-family: cursive;
+  flex-direction: row;
+  justify-content: center;
+  transition: opacity 0.5s 0.25s;
+  opacity: 1;
+  border-radius: 30px;
+}
+
+.movie_container.transparent {
+  transition: opacity 0.25s 0s;
+  opacity: 0;
+}
+
+.close-video {
+  background: red;
+}
+
+@media screen and (min-width: 450px) and (max-width: 950px) {
+  /*p-3 card text-bg-dark mb-5 d-flex flex-row m-4 justify-content-center*/
+  .movie_container{
+    display: flex;
+    flex-direction: column;
+  }
+  .star{
+    width: 60%;
+    margin: 0 auto;
+
+
+  }
+
+  .image_database{
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .movie_container.transparent {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.25s 0s;
+    opacity: 0;
+  }
+  
+}
+
+
+@media screen and (max-width: 450px) {
+  .movie_container{
+    display: flex;
+    flex-direction: column;
+  }
+  .star{
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .image_database{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .movie_container.transparent {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.25s 0s;
+    opacity: 0;
+  }
+
+}
+
+
+
+
+
