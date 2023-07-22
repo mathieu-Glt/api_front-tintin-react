@@ -1,9 +1,9 @@
+const { default: isStrongPassword } = require("validator/lib/isStrongPassword");
+
 const isEmail = require("validator/lib/isEmail").default;
 const isAlpha = require("validator/lib/isAlpha").default;
-const isStrongPassword = require("validator/lib/isStrongPassword").default;
 
 
- 
 function validateRegister(fields) {
 
 

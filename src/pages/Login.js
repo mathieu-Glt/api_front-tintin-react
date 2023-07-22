@@ -143,7 +143,7 @@ export default function Login() {
                 {errEmail && <p>{errEmail}</p>}
                 <label htmlFor="password" style={{ color: "black" }}><strong>Entry your password :</strong></label>
                 <div className="input-group">
-                    <input class="form-control " id="password" name="password" type={passwordVisible} value={password} onChange={handleChangePassword} required />
+                    <input className="form-control " id="password" name="password" type={passwordVisible} value={password} onChange={handleChangePassword} required />
                     {errPassword && <p>{errPassword}</p>}
                     <div className="btn-group">
                         <button className="btn btn-primary p-2" onClick={togglePassword}>

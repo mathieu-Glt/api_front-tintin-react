@@ -93,7 +93,7 @@ function Herge(props) {
 
                 <div className="video-player-container">
                     {/* composant qui lit les medias url*/}
-                    <ReactPlayer class="video-player" url="https://www.youtube.com/watch?v=WFeDlX8TajE" />
+                    <ReactPlayer className="video-player" url="https://www.youtube.com/watch?v=WFeDlX8TajE" />
                 </div>
 
 

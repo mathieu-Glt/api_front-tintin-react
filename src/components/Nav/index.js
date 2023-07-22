@@ -67,7 +67,7 @@ function Nav(props) {
     const handleClickNav = () => {
         console.log('click nav')
         toggleMenu ? setToggleMenu(false) : setToggleMenu(true);
-        console.log({toggleMenu});
+        console.log({ toggleMenu });
     };
 
     const colorRgbAcceuil = {
@@ -122,7 +122,7 @@ function Nav(props) {
 
 
 
-            <nav className={`${ toggleMenu ? "navigation" : "navigation-none"}`}>
+            <nav className={`${toggleMenu ? "navigation" : "navigation-none"}`}>
 
                 <div className='nav_linka'>
                     <a className="link-logo" href='/'><LogoNetflix /></a>
@@ -154,7 +154,7 @@ function Nav(props) {
 
                     </div>
 
-                    { /* Le link LinkGift apparait uniquement si l'utilisateur est connécté */}
+                    { /* Le link LinkGift apparait uniquement si l'utilisateur est connecté */}
                     {isLogged ? <LinkGift /> : null}
 
 

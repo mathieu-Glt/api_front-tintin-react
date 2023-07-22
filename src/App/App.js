@@ -9,7 +9,7 @@ import Series from '../components/Series/index';
 import Tintin from '../components/Tintin/index';
 import Herge from '../components/Herge/index';
 import Header from '../components/Header/index';
-import MovieSearch from '../components/MovieSearch/moviedb';
+// import MovieSearch from '../components/MovieSearch/moviedb';
 import MovieById from '../components/MovieById/index';
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
@@ -299,7 +299,6 @@ function App() {
           <Route path="/toprated" element={<TopRated />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/search" element={<MovieSearch data={inputValue} />} />
           <Route path="/movies/:id" element={<MovieById />} />
           <Route path="/characters/:id" element={<CharacterById />} />
           <Route path={`/characters/:name`} element={<CharacterByName />} />
