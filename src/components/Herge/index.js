@@ -1,5 +1,5 @@
 import React from "react";
-import './herge.scss';
+import './herge.css';
 import { useState, useEffect } from "react";
 import requests from "../../configApi/Request";
 import axios from "axios";

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Link.scss';
+import './Link.css';
 
 // composant lien TINTIN de la barre de navigation (le personnage de tintin)
 function LinkTintin(props) {

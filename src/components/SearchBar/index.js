@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './searchBar.scss';
+import './searchBar.css';
 import { useState } from 'react';
 import SearchIcon from "@material-ui/icons/Search";
 import { useRef } from 'react';

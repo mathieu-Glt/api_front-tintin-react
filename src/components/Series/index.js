@@ -140,7 +140,7 @@ function Series(props) {
                             {character.nom+ ' '}
                             {character.prenom+ ' '}
                             {character.profession+ ' '}
-                            {character.personnage.slice(0, 150)}
+                            {character.personnage.slice(0, 150)}...
                         </p>
 
                         <div className="movies__buttons_favoris">
@@ -151,7 +151,7 @@ function Series(props) {
                             {/* lien qui dirige vers l'affichage des détails du personnage*/}
                             <Link to={`/characters/${character.slug}`}>
                                 <button href="#" className="banner_button_series bg-warning">
-                                    Voir les détails
+                                    Plus
                                 </button>
                             </Link>
                             {/* si je suis admin je peux accéder au boutton supprimer le personnage */}

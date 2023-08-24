@@ -1,5 +1,5 @@
 import React from 'react';
-import './PictureLogo.scss';
+import './PictureLogo.css';
 import pictureLogo from '../../assets/images/Tintin.jpg';
 
 // composant qui à le chemin de l'image du logo

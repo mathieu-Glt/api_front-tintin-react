@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import requests from "../../configApi/Request";
-import './favories.scss';
-import './keyframes-favories.scss';
+import './favories.css';
+import './keyframes-favories.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import RateStar from "../RateStar";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
@@ -23,24 +23,28 @@ function FavoriesList(props) {
 
     // tableau récupérant tous les films listé en faovoris de l'utilisateur
     const [movieFavorite, setMovieFavorite] = useState([]);
-
+    
     // booleen qui contrôle l'affichage de la video
     const [playMovie, setPlayMovie] = useState(null);
 
     // constante qui stocke les differents message à envoyer
     const [displayGuestMessage, setDisplayGuestMessage] = useState(0);
-
+    
     // booleen renvoyé pour la gestion de l'affichage de la fenêtre du film
     const [closeMovie, setCloseMovie] = useState(true);
-
+    
+    // booleen renvoyé pour la gestion de l'affichage de la fenêtre du film
+    const [isAdmin, setIsADmin] = useState(false);
+    
     // hook qui récupére les données du storage du navigateur si il y a un utilisateur connécté ou pas
     useEffect(() => {
         const userStorage = localStorage.getItem("user");
         const userData = JSON.parse(userStorage);
-
+        
         if (userData) {
             // si user connecté
             fetchDatabase();
+            setIsADmin(true)
         } else {
             // si user pas connecté tu envoies message 1
             setDisplayGuestMessage(1);
@@ -52,10 +56,10 @@ function FavoriesList(props) {
             setTimeout(() => {
                 setDisplayGuestMessage(0);
             }, 10000);
-
+            
         }
     }, []);
-
+    
     // hook qui récupère la liste des films favoris de l'utilisateur
     async function fetchDatabase() {
         try {
@@ -64,33 +68,34 @@ function FavoriesList(props) {
                     "x-access-token": JSON.parse(localStorage.getItem('user')).token
                 }
             });
-
+            
             // console.log(request.data);
             if (request.data.results) {
                 setMovieFavorite(request.data.results);
-
+                
             } else {
                 console.log(request.data.msg);
             }
-
+            
         } catch (err) {
             console.log(err.message);
         }
     }
-
+    
     // fonction pour lancer l'affichage de la fenêtre du film
     function handleClickMovie(e, url) {
         e.preventDefault();
         setPlayMovie(url);
     }
-
+    
     // fonction pour fermer l'affichage de la fenêtre du film
     function handleClickMovieClose(e) {
         e.preventDefault();
         setCloseMovie(false);
         setPlayMovie(null);
     }
-
+    
+    console.log("🚀 ~ file: index.js:98 ~ FavoriesList ~ movieFavorite:", movieFavorite)
     return (
         <div>
             <h1 className="bg-dark text-danger mt-4">TOUS MES FILMS FAVORIS</h1>
@@ -107,14 +112,12 @@ function FavoriesList(props) {
                 {movieFavorite.map((movie, index) => (
                     <div className="movie_container_favories" key={index}>
                         {/* composant favoris qui indique les films ajouter en favoris à l'utilisateur connécté qui posséde une liste de favoris*/}
-                        <FavoriteHeart
-                            movie={movie}
-                        />
+                        <a className="link-favourite" href="#"><FavoriteIcon style={{ color: "red", width: "40px", height: "40px" }} /></a>
                         <div className="star">
                             {/* composant pour attribuer une note au films*/}
                             <RateStar
-                                movie={movie}
-                            />
+                                movie={movie.rating}
+                                />
                         </div>
                         <div className="image ">
                             <div className="movie" >
@@ -136,7 +139,7 @@ function FavoriesList(props) {
                             {/* lien dirigeant vers les détails du film */}
                             <Link to={`/movies/${movie.slug}`}>
                                 <button className="card_button_acceuil_details bg-warning">
-                                    Voir les détails
+                                    Plus
                                 </button>
                             </Link>
                             {/* si je suis admin je peux accéder au boutton supprimer le film */}

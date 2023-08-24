@@ -1,5 +1,5 @@
 import React from 'react';
-import './Link.scss';
+import './Link.css';
 
 
 // composant lien SERIES de la barre de navigation (les personnages de tintin)

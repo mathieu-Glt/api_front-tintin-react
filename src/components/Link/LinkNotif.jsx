@@ -1,5 +1,5 @@
 import React from 'react';
-import './Link.scss';
+import './Link.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Basket from '../Basket/basket';
 

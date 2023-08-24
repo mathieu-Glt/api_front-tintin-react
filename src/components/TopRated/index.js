@@ -1,5 +1,5 @@
 import React from "react";
-import './toprated.scss';
+import './toprated.css';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import requests from "../../configApi/Request";

@@ -2,7 +2,7 @@ import React from "react";
 import './carousel.css';
 import { useState, useEffect } from "react";
 import axios from "axios";
-import '../FavorieListMovie/keyframes-favories.scss';
+import '../FavorieListMovie/keyframes-favories.css';
 import requests from "../../configApi/Request";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import RateStar from "../RateStar";
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import DeleteMovie from "../../pages/DeleteMovie";
 import { HashLink } from "react-router-hash-link";
 import ReactPlayer from "react-player/lazy";
-
+import FavoriteHeart from "../FavoriteHeart/FavoriteHeart";
 
 
 // composant pour afficher le carousel de la page Home (logo Netflix en haut de la barre de navigation)
@@ -57,7 +57,11 @@ function Carousel() {
 
         async function fetchDatabase() {
             try {
-                const request = await axios.get(requests.fetchRandomMovie);
+                const request = await axios.get(requests.fetchRandomMovie, {
+                    headers: {
+                        "x-access-token": JSON.parse(localStorage.getItem('user')).token,
+                    }
+                });
                 setToggleVisible(false);
                 setTimeout(() => {
                     setMovieThen(request.data.results);
@@ -111,10 +115,14 @@ function Carousel() {
                     <div className={(toggleVisible ? "movie_container" : "movie_container transparent") + ""} key={index}>
                         <div className="bloc-1 d-flex flex-wrap align-items-center ">
                             <div className="d-flex flex-row justify-content-space-between w-100 ">
-                                <a className="link-favourite" href="#"><FavoriteIcon style={{ color: "red", width: "40px", height: "40px" }} /></a>
+                                {/* <a className="link-favourite" href="#"><FavoriteIcon style={{ color: "red", width: "40px", height: "40px" }} /></a> */}
+                                <FavoriteHeart
+                                    movie={movie}
+                                />
+
                                 <div className="star d-flex flex-row pb-2 justify-content-center mb-2">
                                     <RateStar
-                                        movie={movie}
+                                        movie={movie.rating}
                                     />
                                 </div>
 

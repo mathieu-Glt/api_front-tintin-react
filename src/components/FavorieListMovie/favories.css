@@ -18,7 +18,7 @@
         overflow: hidden;
         
         & >div,  iframe {
-            // border: 2px solid red;
+            /* border: 2px solid red; */
 
     }}
 }
@@ -26,8 +26,8 @@
 .video-player {
     background: black;
     height: 600px;
-    // width: 80%;
-    // animation-name: color;
+    /* // width: 80%; */
+    /* // animation-name: color; */
     animation: color 10s ease infinite;
 }
 
@@ -71,7 +71,7 @@
     flex-direction: row;
     background: white;
     color: black;
-    // padding: 2%;
+    /* // padding: 2%; */
     font-size: 25px;
     border-radius: 10px;
     transition: all 2s ease;
@@ -91,7 +91,7 @@ div.img {
     flex-wrap: wrap;
     padding: 4px;
     background: black;
-    // color: rgb(238, 96, 2);
+    /* // color: rgb(238, 96, 2); */
     font-family: cursive;
     width: 450px;
     border-radius: 30px;
@@ -118,7 +118,7 @@ div.img {
 .movies__buttons_favoris{
     display: flex;
     flex-wrap: wrap;
-    // padding: 20px;
+    /* // padding: 20px; */
     margin: 5px auto;
 
 }
@@ -131,7 +131,7 @@ div.img {
 .movies__buttons_favoris{
     display: flex;
     flex-wrap: wrap;
-    // padding: 20px;
+    /* // padding: 20px; */
 
 }
 
@@ -172,7 +172,7 @@ div.img {
     .movies__buttons_favoris{
         display: flex;
         flex-wrap: wrap;
-        // padding: 20px;
+        /* // padding: 20px; */
         margin: 5px auto;
     
     }
@@ -185,7 +185,7 @@ div.img {
     .movies__buttons_favoris{
         display: flex;
         flex-wrap: wrap;
-        // padding: 20px;
+        /* // padding: 20px; */
     }
     
 

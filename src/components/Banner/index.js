@@ -1,5 +1,5 @@
 import React from "react";
-import "./Banner.scss";
+import "./Banner.css";
 import { useState, useEffect } from "react";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';

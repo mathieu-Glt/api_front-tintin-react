@@ -4,7 +4,7 @@
 }
 
 .character__synopsis{
-    background: rgb(253, 20, 8);
+    background: rgb(253, 188, 8);
     width: 90%;
     margin: 10px auto;
     border-radius: 5px;
@@ -109,9 +109,9 @@
     }
 
     .banner_button_series{
-        width: 30%;
+        /* width: 30%; */
         margin: 10px;
-        font-size: 15px;
+        /* font-size: 15px; */
     }
 
 

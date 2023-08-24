@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.css';
 import Nav from '../components/Nav/index';
 import Footer from '../components/Footer/index';
 import PictureLogo from '../components/Picture/PictureLogo';
@@ -185,12 +185,13 @@ function App() {
 
   // fonction qui soumet le formulaire de la barre de recherche dans le composant Nav au clique sur la validation
   const handleForm = (e, searchValue) => {
+    console.log("🚀 ~ file: App.js:188 ~ handleForm ~ searchValue:", searchValue)
     e.preventDefault();
     axios.get(requests.fetchMovieBySearch + searchValue)
 
       .then((response) => {
         const data = response.data.results
-        // console.log(data.length);
+        console.log(data.length);
         setToggleSearch(false)
         setTimeout(() => {
           setData(data)
@@ -205,6 +206,7 @@ function App() {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }
 
+  console.log("🚀 ~ file: App.js:209 ~ App ~ data:", data)
 
   return (
     <div className="App">
@@ -245,7 +247,7 @@ function App() {
 
         {/*si une recherche dans la barre est faite alors l'affichage du résultat s'affiche */}
         {closeSearch ?
-          <div className='d-flex flex-row flex-wrap'>
+          <div className='card_movie_container d-flex flex-wrap'>
 
             <h1 className={`${toggleSearch ? 'title' : 'title-transparent'}`}>Résutat de la recherche pour : "{search}"
               <button className="close-video" onClick={handleClickSearchClose}>x</button>
@@ -254,84 +256,87 @@ function App() {
             {data.map((movie, index) => (
               <div className='card-movie-search d-flex flex-row flex-wrap justify-content-center p-1 pt-2'>
                 <div className={`${toggleSearch ? 'movie_container_search' : 'movie_container_search-transparent mb-4'}`}>
+                  <div className='container'>
+                    <div className='row'>
+                      <div className='text-bg-dark mb-3 mt-3 me-3 ml-3 col-sm-10 ' key={index}>
+                        <FavoriteHeart
+                          movie={movie}
+                        />
 
-                  <div className='content-card p-4 card text-bg-dark mb-3 mt-3 col-sm-5 m-auto ' key={index}>
-                    <FavoriteHeart
-                      movie={movie}
-                    />
+                        <div className="d-flex flex-row pb-2 justify-content-center mb-2">
+                          <RateStar
+                            movie={movie}
+                          />
+                        </div>
 
-                    <div className="d-flex flex-row pb-2 justify-content-center mb-2">
-                      <RateStar
-                        movie={movie}
-                      />
+                        <div className='d-flex flex-row pb-2 justify-content-center mb-2'>
+                          <p className='movies__synopsis card-text pt-4 text-warning display-6'>{movie.title}</p>
+                        </div>
+                        <div className="movie" >
+                          <img className="image_database_acceuil" alt="image_film_tintin" src={process.env.PUBLIC_URL + '/tintin/' + movie.picture} />
+                        </div>
+                        <p className="movies__synopsis_search card-text pt-4">
+                          {movie.synopsis}
+                        </p>
+                        <button type="button" onClick={(e) => handleClickMovie(e, movie.movie)} className="banner_button btn-sm">
+                          <PlayCircleIcon /><HashLink className="text-dark" smooth to='#movie-tintin'>Lecture</HashLink>
+                        </button>
+
+                      </div>
                     </div>
-
-                    <div className='d-flex flex-row pb-2 justify-content-center mb-2'>
-                      <p className='movies__synopsis card-text pt-4 text-warning display-6'>{movie.title}</p>
                     </div>
-                    <div className="movie" >
-                      <img className="image_database_search" alt="image_film_tintin" src={process.env.PUBLIC_URL + '/tintin/' + movie.picture} />
-                    </div>
-                    <p className="movies__synopsis_search card-text pt-4">
-                      {movie.synopsis}
-                    </p>
-                    <button type="button" onClick={(e) => handleClickMovie(e, movie.movie)} className="banner_button btn-sm">
-                      <PlayCircleIcon /><HashLink className="text-dark" smooth to='#movie-tintin'>Lecture</HashLink>
-                    </button>
-
                   </div>
                 </div>
-              </div>
             ))}
 
-          </div> : null}
+              </div> : null}
 
-        {/* <Basket /> */}
-        {/* ici les différents lien dirigeant sur les pages du site */}
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/acceuil" element={<Acceuil />} />
-          <Route path="/favories" element={<FavoriesList />} />
-          <Route path="/characters" element={<Series data={character} handleAddBasket={addBasket} todos={todos} />} />
-          <Route path="/basket" element={<Basket todos={todos} data={character} />} />
-          <Route path="/tintin" element={<Tintin />} />
-          <Route path="/herge" element={<Herge />} />
-          <Route path="/toprated" element={<TopRated />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/movies/:id" element={<MovieById />} />
-          <Route path="/characters/:id" element={<CharacterById />} />
-          <Route path={`/characters/:name`} element={<CharacterByName />} />
-          <Route path={`/movies/:name`} element={<MovieByName />} />
-          <Route path={`/addmovie`} element={<MovieAdd />} />
-          <Route path={`/editmovie/:id`} element={<EditMovie props={{ datas: dataMovie }} />} />
-          <Route path={`/addcharacter`} element={<CharacterAdd />} />
-          {/* <Route path="/movies/delete/:id" element={<DeleteMovie />} /> */}
-          <Route path='*' element={<Error404 />} />
-        </Routes>
+            {/* <Basket /> */}
+            {/* ici les différents lien dirigeant sur les pages du site */}
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/acceuil" element={<Acceuil />} />
+              <Route path="/favories" element={<FavoriesList />} />
+              <Route path="/characters" element={<Series data={character} handleAddBasket={addBasket} todos={todos} />} />
+              <Route path="/basket" element={<Basket todos={todos} data={character} />} />
+              <Route path="/tintin" element={<Tintin />} />
+              <Route path="/herge" element={<Herge />} />
+              <Route path="/toprated" element={<TopRated />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/movies/:id" element={<MovieById />} />
+              <Route path="/characters/:id" element={<CharacterById />} />
+              <Route path={`/characters/:name`} element={<CharacterByName />} />
+              <Route path={`/movies/:name`} element={<MovieByName />} />
+              <Route path={`/addmovie`} element={<MovieAdd />} />
+              <Route path={`/editmovie/:id`} element={<EditMovie props={{ datas: dataMovie }} />} />
+              <Route path={`/addcharacter`} element={<CharacterAdd />} />
+              {/* <Route path="/movies/delete/:id" element={<DeleteMovie />} /> */}
+              <Route path='*' element={<Error404 />} />
+            </Routes>
 
-        <div className='banner'>
-          {/* banner */}
-          <Banner />
-        </div>
-        {/* video */}
-
-        {/* affichage de la fenêtre de la video */}
-        <section id="movie-tintin"></section>
-        {playMovie ?
-          <div className="video-container">
-            <button className="close-video" onClick={handleClickMovieClose}>x</button>
-            <h1>Bon visionnage</h1>
-            <div className="video-player">
-              <ReactPlayer url={playMovie} />
+            <div className='banner'>
+              {/* banner */}
+              <Banner />
             </div>
-          </div>
-          : null}
+            {/* video */}
+
+            {/* affichage de la fenêtre de la video */}
+            <section id="movie-tintin"></section>
+            {playMovie ?
+              <div className="video-container">
+                <button className="close-video" onClick={handleClickMovieClose}>x</button>
+                <h1>Bon visionnage</h1>
+                <div className="video-player">
+                  <ReactPlayer url={playMovie} />
+                </div>
+              </div>
+              : null}
 
 
-        {/* footer */}
-        <Footer />
-      </Router>
+            {/* footer */}
+            <Footer />
+          </Router>
     </div>
   );
 }

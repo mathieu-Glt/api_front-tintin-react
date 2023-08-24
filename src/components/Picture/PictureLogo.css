@@ -4,27 +4,27 @@
     margin: 200px auto 50px;
 }
 
-// @media screen and (max-width: 1300px) {
+/* // @media screen and (max-width: 1300px) {
 //     .logoPicture {
 //         height: 200px;
 //         width: 300px;
 //         margin-left: 600px;
 //         margin-bottom: 50px;
-//     }
+//     } */
     
 
-// }
+/* // } */
 
-// @media screen and (max-width: 900px) {
+/* // @media screen and (max-width: 900px) {
 //     .logoPicture {
 //         height: 200px;
 //         width: 300px;
 //         margin-left: 480px;
 //         margin-bottom: 50px;
-//     }
+//     } */
     
 
-// }
+/* // } */
 
 @media screen and (max-width: 800px) {
     .logoPicture {

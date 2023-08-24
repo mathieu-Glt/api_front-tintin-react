@@ -1,5 +1,5 @@
 import React from 'react';
-import './Link.scss';
+import './Link.css';
 
 // composant lien FAVORIES de la barre de navigation
 function LinkFavories(props) {

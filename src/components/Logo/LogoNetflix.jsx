@@ -1,5 +1,5 @@
 import React from 'react';
-import './Logo.scss';
+import './Logo.css';
 import netflixYellow from '../../assets/images/tintin.png';
 // composant ou se trouve le logo de l'application dans la barre de navigation
 function LogoNetflix() {

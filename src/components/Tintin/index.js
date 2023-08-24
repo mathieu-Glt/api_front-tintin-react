@@ -1,5 +1,5 @@
 import React from "react";
-import './personnage.scss';
+import './personnage.css';
 import { useState, useEffect } from "react";
 import requests from "../../configApi/Request";
 import axios from "axios";

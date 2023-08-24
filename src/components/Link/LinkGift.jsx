@@ -1,5 +1,5 @@
 import React from 'react';
-import './Link.scss';
+import './Link.css';
 import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 
 

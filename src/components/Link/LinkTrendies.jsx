@@ -1,5 +1,5 @@
 import React from 'react';
-import './Link.scss';
+import './Link.css';
 
 // composant abandonné temporairement
 function LinkTrendies(props) {

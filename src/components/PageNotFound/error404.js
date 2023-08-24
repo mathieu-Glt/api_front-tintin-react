@@ -1,5 +1,5 @@
 import React from 'react';
-import './error404.scss';
+import './error404.css';
 
 // composant d'affichage de la page catSanCat
 export default function Error404() {

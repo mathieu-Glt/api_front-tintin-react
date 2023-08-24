@@ -8,7 +8,7 @@ import RateStar from "../RateStar";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from "react-router-dom";
 import Carousel from "../Caroussel/carousel";
-import './home.scss';
+import './home.css';
 
 // composant de la page Home là ou se trouve le carousel
 function Home() {

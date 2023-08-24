@@ -8,7 +8,7 @@ import axios from 'axios';
 export default function FavoriteHeart(props) {
     // si props.movie.favorite (film present dans mes favoris) existe affiche moi le coeur rempli sinon vide
     const Component = props.movie.favorite ? FavoriteIconFilled : FavoriteIconEmpty;
-    console.log(props.movie);
+    console.log(props.movie.favorite);
     
     // fonction pour lancer l'affichage des films en favoris si utilisateur connecté
     function handleClick(e, movieId) {

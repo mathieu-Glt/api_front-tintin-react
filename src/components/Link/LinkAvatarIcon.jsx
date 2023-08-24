@@ -1,5 +1,5 @@
 import React from 'react';
-import './Link.scss';
+import './Link.css';
 import avatarConnected from '../../assets/images/avatarConnecte.png';
 import axios from "axios";
 import { useState } from "react"
