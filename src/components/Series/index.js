@@ -150,7 +150,7 @@ function Series(props) {
                             </button>
                             {/* lien qui dirige vers l'affichage des détails du personnage*/}
                             <Link to={`/characters/${character.slug}`}>
-                                <button href="#" className="banner_button_series bg-warning">
+                                <button href="#" className="banner_button_series bg-warning p-2">
                                     Plus
                                 </button>
                             </Link>

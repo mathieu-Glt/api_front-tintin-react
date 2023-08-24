@@ -102,7 +102,7 @@ function TopRated() {
                         <FavoriteHeart movie={movie} />
 
                         <div className="star">
-                            <RateStar movie={movie} />
+                            <RateStar movie={movie.rating} />
                         </div>
                         <div className="image">
                             <div className="movie">
