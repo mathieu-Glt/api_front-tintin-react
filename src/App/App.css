@@ -66,12 +66,6 @@ a.link-favourite {
 
 .title-transparent {
   transition: all 1.5s ease;
-  margin: 0 auto;
-  color: red;
-  background-color: gold;
-  border: 2px solid black;
-  padding: 1px;
-  width: 100vw;
   opacity: 0;
 }
 

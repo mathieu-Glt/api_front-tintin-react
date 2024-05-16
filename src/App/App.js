@@ -332,10 +332,6 @@ function App() {
                 </div>
               </div>
               : null}
-
-
-            {/* footer */}
-            <Footer />
           </Router>
     </div>
   );

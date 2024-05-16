@@ -20,14 +20,11 @@
         & >div,  iframe {
             /* border: 2px solid red; */
 
-    }}
 }
 
 .video-player {
     background: black;
     height: 600px;
-    /* // width: 80%; */
-    /* // animation-name: color; */
     animation: color 10s ease infinite;
 }
 
