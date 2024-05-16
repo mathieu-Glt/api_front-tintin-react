@@ -5,6 +5,36 @@
 
 }
 
+h1.title_film_herge {
+    background: rgb(40, 39, 39);
+    color:rgb(90, 203, 238);
+    margin-top: 10px;
+
+}
+
+
+.hauts_de_page {
+    background-color: rgb(255, 96, 96);
+    color: black;
+    font-family: cursive;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.bas_de_page {
+    background-color: rgb(152, 69, 30);
+    color: black;
+    font-family: cursive;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+
+}
+.block1 {
+    background-color: rgb(241, 71, 71);
+}
+
 
 .video-player-container {
     background: red;
@@ -15,7 +45,8 @@
     justify-content: center;
 }
 
-@media screen and (min-width: 400px){
+/* TABLETTE - LAPTOP */
+@media screen and (min-width: 700px){
     .card_movie_herge{
         width: 90%;
         margin: 0 auto;
@@ -55,14 +86,15 @@
         flex-direction: column;
         padding: 3px;
         background: rgb(19, 45, 86);
-        color: rgb(5, 115, 240);
+        color: rgb(27, 96, 174);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         width: 80%;
         border-radius: 30px;
         margin: 10px auto;
     }
     .movies__synopsis_herge{
         font-size: 20px;
-        color: rgb(5, 115, 240);
+        color: rgb(23, 80, 146);
 
     }
     
@@ -82,12 +114,14 @@
     
 }
 
-@media screen and (max-width: 400px){
+/* MOBILE */
+@media screen and (max-width: 700px){
     .card_movie{
         width: 90%;
         margin: 0 auto;
         border-radius: 10px;
     }
+    
     .image_herge1 {
         width: 90%;
         margin: 10px auto;
@@ -120,14 +154,19 @@
         display: flex;
         flex-direction: column;
         padding: 3px;
-        color: rgb(5, 115, 240);
+        background: rgb(19, 45, 86);
+        color: rgb(23, 80, 146);
         width: 80%;
         border-radius: 30px;
         margin: 10px auto;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+
+
     }
     .movies__synopsis_herge{
         font-size: 20px;
-        color: rgb(5, 115, 240);
+        color: rgb(23, 80, 146);
 
     }
     

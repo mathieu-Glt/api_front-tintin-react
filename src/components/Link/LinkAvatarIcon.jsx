@@ -45,7 +45,12 @@ function LinkAvatarIcon() {
     // fonction qui lance la requête de déconnexion de l'utilisateur
     function handleClick(e) {
         e.preventDefault()
-        axios.post(api_url + '/logout')
+        axios.post(`${api_url}/api/users/logout`, {
+            // headers: {
+            //     "x-access-token": JSON.parse(localStorage.getItem('user')).token,
+            // }
+
+        })
             .then((response) => {
                 // console.log(response);
                 if (response.status === 200) {

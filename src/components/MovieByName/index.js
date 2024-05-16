@@ -45,17 +45,18 @@ export default function MovieByName() {
                     <div className="movie_container p-4 card text-bg-dark mb-3 d-flex flex-column m-4 w-25 justify-content-center" key={index}>
                         <a className="link-favourite" href="#"><FavoriteIcon style={{ color: "red", width: "40px", height: "40px" }} /></a>
 
-                        <div className="d-flex flex-row pb-2 justify-content-center mb-2">
+                        <div className="rate_star">
                             <RateStar />
                         </div>
-                        <div className="image ">
+                        <div className="image_movie ">
                             <div className="movie" >
                                 <img className="image_database" alt="poster_film_tintin" src={process.env.PUBLIC_URL + '/tintin/' + movieDatabase.picture} />
                             </div>
+                            <p className="movies__synopsis card-text pt-4">
+                                {movieDatabase.synopsis}
+                            </p>
+
                         </div>
-                        <p className="movies__synopsis card-text pt-4">
-                            {movieDatabase.synopsis}
-                        </p>
                         <div className="movies__buttons ">
                             <button type="button" className="banner_button btn-sm">
                                 <PlayCircleIcon />Lecture

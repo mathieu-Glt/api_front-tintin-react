@@ -1,24 +1,19 @@
-.video-container {
-    display: flex;
-    flex-direction: column;
-    margin: 10% 0 10%;
-    padding: 3% 0 3%;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 800px;
-    width: 100%;
-    color: white;
-    font-family: cursive;
-    animation:  colorb 10s ease infinite;
+.card_button_acceuil_lecture {
+    background-color: rgb(0, 106, 255);
+    border: none;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 2px;
+    width: 100px
 
-    & > div, iframe {
-        border-radius: 8px;
-        overflow: hidden;
-        
-        & >div,  iframe {
-            /* border: 2px solid red; */
+}
+
+.card_button_acceuil_details {
+    background-color: rgb(255, 208, 0);
+    border: none;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 2px;
 
 }
 
@@ -28,12 +23,16 @@
     animation: color 10s ease infinite;
 }
 
+.card_movie_section_favories {
+    min-height: 100vh;
+}
+
 @keyframes color {
     0% {
-        background: #128ad5;
+        background: #075687;
     }
     20% {
-        background: #388cc4
+        background: #136195
     }
     40% {
         background: #0656a1
@@ -56,19 +55,18 @@
     background: white;
     color: black;
     padding: 2%;
-    font-size: 25px;
+    font-size: 1.5rem;
     font-weight: bold;
     border-radius: 10px;
 }
 
 .transDisplayMessage {
     position: absolute;
-    left: 100px;
+    left: 10px;
     display: flex;
     flex-direction: row;
     background: white;
     color: black;
-    /* // padding: 2%; */
     font-size: 25px;
     border-radius: 10px;
     transition: all 2s ease;
@@ -76,24 +74,44 @@
 
 }
 
+.title_film_favories {
+    background: rgb(49, 47, 47);
+    color:rgb(255, 0, 0);
+    margin-top: 10px;
+
+}
+
+
 div.img {
     height: 100px;
     width: 100px;
 }
 
-@media screen and (max-width: 460px){
 
+/* MOBILE*/
+@media screen and (max-width: 700px){
+
+.image_dupont1 {
+    width: 200px
+}
+
+.image_dupont2 {
+    width: 200px
+}
+.movies__synopsis_favories {
+    font-size: 1.2rem;
+    color:rgb(255, 208, 0)
+}
 .movie_container_favories{
-    display: flex;
-    flex-wrap: wrap;
     padding: 4px;
     background: black;
-    /* // color: rgb(238, 96, 2); */
-    font-family: cursive;
-    width: 450px;
+    color: rgb(225, 212, 212);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 90%;
     border-radius: 30px;
-    border: 3px solid rgb(194, 69, 11);
-    margin: 10px;
+    border: 1px solid rgb(14, 6, 6);
+    margin: auto;
+    margin-bottom: 20px
 
 }
 .image_database_favoris{
@@ -128,26 +146,39 @@ div.img {
 .movies__buttons_favoris{
     display: flex;
     flex-wrap: wrap;
-    /* // padding: 20px; */
 
 }
 
 }
 
+/* TABLETTE - LAPTOP */
+@media screen and (min-width: 700px){
+    .card_movie_section_favories {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-@media screen and (min-width: 460px){
+    .movies__synopsis_favories {
+        font-size: 1.2rem;
+        color:rgb(255, 208, 0)
+    }
+{
 
+}    
+    
+    .movies__synopsis {
+        font-size: 1.3rem;
+    }
     .movie_container_favories{
         display: flex;
         flex-wrap: wrap;
         padding: 4px;
         background: black;
-        color: rgb(238, 159, 2);
-        font-family: cursive;
-        width: 450px;
+        color: white;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        width: 380px;
         border-radius: 30px;
-        border: 3px solid rgb(194, 69, 11);
-        margin: 10px;
+        margin: 10px auto;
     
     }
     .image_database_favoris{
@@ -169,7 +200,6 @@ div.img {
     .movies__buttons_favoris{
         display: flex;
         flex-wrap: wrap;
-        /* // padding: 20px; */
         margin: 5px auto;
     
     }
@@ -182,7 +212,6 @@ div.img {
     .movies__buttons_favoris{
         display: flex;
         flex-wrap: wrap;
-        /* // padding: 20px; */
     }
     
 

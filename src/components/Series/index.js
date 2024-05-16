@@ -122,17 +122,17 @@ function Series(props) {
 
         <div>
             <section id="perso-haut"></section>
-            <HashLink className="border-2 border border-primary bg-white text-dark p-2" smooth to='#perso-bas'>Bas de page</HashLink>
+            <HashLink className="bas_de_page" smooth to='#perso-bas'>👎 Bas de page 👎</HashLink>
 
 
             <h1 className="title-character">TOUS LES PERSONNAGES DE LA SERIE</h1>
-            <section className="card_movie d-flex flex-row flex-wrap ">
+            <section className="card_movie">
                 {/* affichage du résulat de la fonction  fetchDatabase pour renvoyer tous les personnages de tintin*/}
                 {characterDatabase.map((character, index) => (
 
                     <div key={index} className="card_movie_container_character">
                         <div className="image ">
-                            <div className="movie">
+                            <div className="movie_character">
                                 <img className="image_database_series" alt="image_perso" src={process.env.PUBLIC_URL + '/seriePerso/' + character.picture} />
                             </div>
                         </div>
@@ -150,12 +150,12 @@ function Series(props) {
                             </button>
                             {/* lien qui dirige vers l'affichage des détails du personnage*/}
                             <Link to={`/characters/${character.slug}`}>
-                                <button href="#" className="banner_button_series bg-warning p-2">
+                                <button href="#" className="banner_button_series_plus">
                                     Plus
                                 </button>
                             </Link>
                             {/* si je suis admin je peux accéder au boutton supprimer le personnage */}
-                            {admin ? <button className="banner_button_series bg-danger">
+                            {admin ? <button className="banner_button_series">
                                 Supprimer
                             </button> : null}
                             {admin ? <button className="card_button_acceuil_edit ">
@@ -171,7 +171,7 @@ function Series(props) {
 
             </section>
             <section id="perso-bas"></section>
-            <HashLink className=" border-2 border border-warning bg-white text-dark p-2" alt="75x75" smooth to='#perso-haut'>Hauts de page</HashLink>
+            <HashLink className=" hauts_de_page" alt="75x75" smooth to='#perso-haut'>👍 Hauts de page 👍</HashLink>
             {/* si je suis admin je peux accéder au boutton ajouter un personnage */}
             {admin ? <Link to={`/addcharacter`}>
                 <button type="button" className="button-add-character">

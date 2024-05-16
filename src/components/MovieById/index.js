@@ -5,6 +5,8 @@ import requests, { api_url } from '../../configApi/Request';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import RateStar from "../RateStar";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import './movieById.css'
+import ReactCalendar from '../calendar/calendar';
 
 // composant qui affiche un film par son id ou son nom
 export default function MovieById() {
@@ -18,6 +20,19 @@ export default function MovieById() {
 
     // booleen pour la gestion de l'affichage des bouttons du film affiché dans le carousel
     const [admin, setAdmin] = useState(false);
+
+    // booleen renvoyé pour la gestion de l'affichage du calendrier
+    const [calendrier, setCalendrier] = useState(false);
+
+
+    function displayCalendar(e, movie) {
+        e.preventDefault();
+        console.log('display calendar ');
+        console.log("🚀 ~ displayCalendar ~ movie:", movie)
+        setCalendrier(!calendrier)
+
+    }
+
 
     // requête pour récupérer de l'api tous les détails du film soit par son id ou par son titre
     useEffect(() => {
@@ -54,54 +69,70 @@ export default function MovieById() {
 
     }, [])
 
-console.log(movieDatabase);
+console.log("movieDatabase : ", movieDatabase);
 
     return (
 
         <div>
-            <h1 className="bg-dark text-warning mt-4">DETAILS FILM</h1>
+            <h1 className="title_details_film">DETAILS FILM</h1>
             <Link to="/acceuil">
-                <button>Retour Acceuil</button>
+                <button className='button_detials_movies'>Retour Acceuil</button>
             </Link>
 
-            <section className="card_movie d-flex flex-row flex-wrap justify-content-center p-4 pt-4">
+            <section className="card_movie">
 
                 {/* affichage du résulat de la fonction  fetchDatabase pour renvoyer tous les détails du film */}
-                {movieDatabase.map((movie, index) => (
-                    <div className="movie_container p-4 card text-bg-dark mb-3 d-flex flex-column m-4 w-25 justify-content-center" key={index}>
-                        <a className="link-favourite" href="#"><FavoriteIcon style={{ color: "red", width: "40px", height: "40px" }} /></a>
+                {/* {movieDatabase && movieDatabase.map((movie, index) => ( */}
+                    <div className="movie_container " >
+                        <div className="">
+                            <div className="rate">
+                                {/* <a className="link-favourite" href="#"><FavoriteIcon style={{ color: "red", width: "40px", height: "40px" }} /></a> */}
+                                <FavoriteIcon
+                                    movie={movieDatabase}
+                                />
 
-                        <div className="d-flex flex-row pb-2 justify-content-center mb-2">
-                            <RateStar 
-                            movie={movie.rating}
-                            />
-                        </div>
-                        <div className="image ">
-                            <div className="movie" >
-                                {/* <img className="image_database" src={process.env.PUBLIC_URL + '/tintin/' + movieDatabase.picture} /> */}
-                                <img className="image_database" alt="poster_film_tintin" src={api_url + '/images/' + movie.picture} />
+                                <div className="">
+                                    <RateStar
+                                        movie={movieDatabase}
+                                    />
+                                </div>
+
                             </div>
+
+                                <div className="movie" >
+                                    <img className="image_database" alt="poster_film_tintin" src={process.env.PUBLIC_URL + '/tintin/' + movieDatabase.picture} />
+                                    <p className="carousel_movies__synopsis">
+                                {movieDatabase.synopsis}
+                            </p>
+
+                                </div>
+
                         </div>
-                        <p className="movies__synopsis card-text pt-4">
-                            {movie.synopsis}
-                        </p>
                         <div className="movies__buttons ">
-                        </div>
-                        <div type="button" className="movies__buttons p-2 d-flex flex-row justify-content-around ">
+                        <div type="button" className="movies__buttons">
                             {/* si je suis admin je peux accéder au boutton éditer le film */}
-                            {admin ? <button className="banner_button btn-sm bg-warning">
+                            {admin ? <button className="banner_button">
                                 Editer
                             </button> : null}
                             {/* si je suis admin je peux accéder au boutton supprimer le film */}
-                            {admin ? <button type="button" className="banner_button btn-sm bg-danger">
+                            {admin ? <button type="button" className="banner_button">
                                 Supprimer
                             </button> : null}
 
+                            <button className="card_button_acceuil_lecture" onClick={(e) => displayCalendar(e, movieDatabase)}>
+                                Calendar
+                            </button>
+
+
                         </div>
+
+                        </div>
+                        { calendrier && <ReactCalendar movie={movieDatabase}/>}
 
                     </div>
 
-                ))}
+
+                {/* ))} */}
             </section>
 
         </div>

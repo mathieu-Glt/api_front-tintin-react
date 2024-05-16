@@ -12,24 +12,24 @@ function Banner() {
 
     const [movieApi, setMovieApi] = useState();
 
-    // useEffect(() => {
-    //     async function fetchDataApi() {
-    //         // const request = await axios.get(requests.fetchAllTintinApi);
+    useEffect(() => {
+        async function fetchDataApi() {
+            const request = await axios.get(requests.fetchAllTintinApi);
             
-    //         //console.log(request);
-    //         //console.log(request.data.results)
+            //console.log(request);
+            console.log("banner results ", request.data.results)
 
-    //         setMovieApi(
-    //             request.data.results[
-    //             Math.floor(Math.random() * request.data.results.length - 1)
-    //             ]
+            // setMovieApi(
+            //     request.data.results[
+            //     Math.floor(Math.random() * request.data.results.length - 1)
+            //     ]
 
-    //         );
-    //     }
-    //     fetchDataApi();
-    // }, []);
+            // );
+        }
+        fetchDataApi();
+    }, []);
 
-    //console.log(movieApi);
+    console.log(movieApi);
 
 
 

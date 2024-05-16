@@ -3,6 +3,15 @@ a.link-favourite {
     width: 10px;
 }
 
+.title_film_top_rated{
+    background: rgb(49, 47, 47);
+    color:rgb(11, 138, 81);
+    margin-top: 10px;
+
+}
+
+
+
 .displayMessage {
     display: flex;
     flex-direction: row;
@@ -32,8 +41,14 @@ div.img {
     width: 100px;
 }
 
+/* TABLETTE - LAPTOP */
+@media screen and (min-width: 700px){
 
-@media screen and (min-width: 400px){
+    .movies__synopsis_top-rated {
+        color: gold;
+        font-size: 1.2rem;
+    }
+
     .card_movie_container_top{
         display: flex;
         flex-wrap: wrap;
@@ -44,7 +59,8 @@ div.img {
         width: 450px;
         border-radius: 30px;
         border: 1px solid rgb(14, 6, 6);
-        margin: 10px;
+        margin: 10px auto;
+
     }
     .movies__synopsis_acceuil{
         padding: 4%;
@@ -79,18 +95,28 @@ div.img {
     
 }
 
-@media screen and (max-width: 400px){
-    .card_movie_container_top{
+
+/* MOBILE */
+@media screen and (max-width: 700px){
+    .card_movie_container{
         display: flex;
         flex-wrap: wrap;
         padding: 4px;
-        background: black;
-        color: rgb(81, 162, 94);
+        color: white;
         width: 450px;
         border-radius: 30px;
-        border: 1px solid rgb(14, 6, 6);
-        margin: 10px;
+        margin: 10px auto;
+      
+
     }
+
+    .movies__synopsis_top-rated {
+        color: gold;
+        font-size: 1.2rem;
+    }
+    
+
+
     .movies__synopsis_acceuil{
         padding: 4%;
     }

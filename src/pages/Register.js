@@ -11,8 +11,8 @@ import { api_url } from "../configApi/Request";
 
 export default function Register() {
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [firstname, setFirstName] = useState('');
+    const [lastname, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errFirstName, setErrFirstName] = useState('');
@@ -44,8 +44,8 @@ export default function Register() {
 
     function canSubmit() {
         const { success, errors } = validateRegister({
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             email,
             password
         })
@@ -70,13 +70,13 @@ export default function Register() {
             return
         }
         let body = {
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             email,
             password
         }
         //console.log(body);
-        axios.post(`${api_url}/api/v1/user`, body)
+        axios.post(`${api_url}/api/users/register`, body)
             .then((response) => {
 
                 console.log(response);
@@ -116,10 +116,10 @@ export default function Register() {
 
             <form className="form">
                 <label htmlFor="firstname" style={{color: "black"}}><strong>Entry your firstName :</strong></label>
-                <input value={firstName} onChange={handleChangeFirstName} id="firstname" name="firstname" required />
+                <input value={firstname} onChange={handleChangeFirstName} id="firstname" name="firstname" required />
                 {errFirstName && <p>{errFirstName}</p>}
                 <label htmlFor="lastname" style={{color: "black"}}><strong>Entry your lastName :</strong></label>
-                <input value={lastName} onChange={handleChangeLastName} id="lastname" name="lastname" required />
+                <input value={lastname} onChange={handleChangeLastName} id="lastname" name="lastname" required />
                 {errLastName && <p>{errLastName}</p>}
                 <label htmlFor="email" style={{color: "black"}}><strong>Entry your email :</strong></label>
                 <input type='email' value={email} onChange={handleChangeEmail} id="email" name="email" required />

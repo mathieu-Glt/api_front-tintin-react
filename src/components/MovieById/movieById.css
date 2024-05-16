@@ -1,0 +1,79 @@
+.button_detials_movies {
+    background-color: #2efdc6;
+    border: none;
+    padding: 5px;
+
+}
+
+.title_details_film {
+    background: rgb(49, 47, 47);
+    color:rgb(255, 221, 0);
+    margin-top: 10px;
+
+}
+/* MOBILE */
+@media screen and (max-width: 700px){
+
+    .card_movie {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .div.movie {
+        width: 30%
+    }
+
+    
+    .rate_star {
+        display: block;
+        width: 100%;
+    }
+    .image {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .image_database {
+        width: 90%;
+    }
+
+    
+    
+}
+
+/* LAPTOP */
+@media screen and (min-width: 1100px){
+    .block_cont {
+        display: inline-block;
+        width: 100%
+    }
+
+    .image {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .movie_container {
+        /*p-3 card text-bg-dark mb-5 d-flex flex-row m-4 justify-content-center*/
+      padding: 3%;
+      background: rgb(63, 44, 44);
+      color:   #fdb12e;
+      margin-right: 10%;
+      margin-left: 10%;
+      margin-bottom: 10%;
+      display: flex;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      flex-wrap: wrap;
+      border-radius: 30px;
+    }
+
+    div.movie {
+        width: 30%
+    }
+
+    .carousel_movies__synopsis {
+        margin-left: 50px;
+        width: 60%;
+    }
+      
+
+}

@@ -1,0 +1,58 @@
+.button_details_character {
+    background-color: #fdb12e;
+    border: none;
+    padding: 5px;
+    
+    
+}
+/* MOBILE */
+@media screen and (max-width: 700px){
+
+    .card_movie {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .rate_star {
+        display: block;
+        width: 100%;
+    }
+
+    .image_database {
+        width: 90%;
+    }
+
+    
+    
+}
+
+/* LAPTOP */
+@media screen and (min-width: 1100px){
+    .block_cont {
+        display: inline-block;
+        width: 100%
+    }
+
+    div.info_character {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .movie_container {
+      padding: 3%;
+      background: rgb(63, 44, 44);
+      color:   #fdb12e;
+      margin-bottom: 10%;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      border-radius: 30px;
+    }
+
+
+    .carousel_movies__synopsis {
+        margin-left: 50px;
+        width: 60%;
+    }
+      
+
+}

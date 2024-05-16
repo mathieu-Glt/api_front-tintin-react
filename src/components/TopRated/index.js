@@ -87,17 +87,17 @@ function TopRated() {
 
     return (
         <div>
-            <h1 className="bg-dark text-success">LES MEILLEURS FILMS </h1>
+            <h1 className="title_film_top_rated">LES MEILLEURS FILMS </h1>
             <div>
                 <div className={`${displayGuestMessage === 1 ? 'displayMessage' : 'transDisplayMessage'}`}><img alt="image_tournesol" src={process.env.PUBLIC_URL + '/assets/Tournesol.jpg'} /><p> Je ne comprends pas mon pendule m'indique que mes films sont içi ? </p></div>
                 <div className={`${displayGuestMessage === 2 ? 'displayMessage' : 'transDisplayMessage'}`}><img alt="haddock" src={process.env.PUBLIC_URL + '/assets/haddock.png'} /><p> Mille millions de mille sabords vous étes sourds !  Combien de fois faut il vous le répeter ! Vous devez être connécté !!!</p></div>
             </div>
 
-            <section className="card_movie d-flex flex-row flex-wrap justify-content-center p-4 pt-4">
+            <section className="card_movie_section">
 
                 {/* affichage du résulat de la fonction  fetchDatabase pour renvoyer tous les films de tintin les mieux notés */}
                 {movieRatedDatabase.map((movie, index) => (
-                    <div key={index} className="card_movie_container_top">
+                    <div key={index} className="movie_container_favories">
                         {/* <a className="link-favourite" href="#"><FavoriteIcon style={{ color: "red", width: "40px", height: "40px" }} /></a> */}
                         <FavoriteHeart movie={movie} />
 
@@ -105,26 +105,26 @@ function TopRated() {
                             <RateStar movie={movie.rating} />
                         </div>
                         <div className="image">
-                            <div className="movie">
+                            <div className="movie_top_rated">
                                 <img className="image_database_top_rated" alt="poster_film_tintin" src={process.env.PUBLIC_URL + '/tintin/' + movie.picture} />
                             </div>
                         </div>
-                        <p className="movies__synopsis">
-                            {movie.synopsis}
+                        <p className="movies__synopsis_top-rated">
+                        {movie.synopsis.substring(0, 300)}...
                         </p>
-                        <div className="movies__buttons p-2 ">
-                            <button className="banner_button btn-sm">
+                        <div className="movies__buttons">
+                            <button className="card_button_acceuil_lecture">
                                 <PlayCircleIcon />Lecture</button>
                         </div>
-                        <div className="movies__buttons p-2 d-flex flex-row justify-content-around ">
+                        <div className="movies__buttons ">
                             {/* lien dirigeant vers les détails du film */}
-                            <Link to={`/movies/${movie.title}`}>
-                                <button className="banner_button btn-sm bg-warning">
+                            <Link to={`/movies/${movie.slug}`}>
+                                <button className="card_button_acceuil_details">
                                     Voir les détails
                                 </button>
                             </Link>
                             {/* si je suis admin je peux accéder au boutton supprimer le film */}
-                            {admin ? <button className="banner_button btn-sm bg-danger">
+                            {admin ? <button className="banner_button">
                                 Supprimer
                             </button> : null}
 

@@ -10,9 +10,9 @@ import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 
 // composant des notes de chaque film
 function RateStar(props) {
+    console.log("🚀 ~ RateStar ~ props:", props.movie)
     // const Component = props.movie.rating ? FavoriteIconFilled : FavoriteIconEmpty;
 
-    console.log(props.movie);
     // console.log(props.movie.rating);
     const stars = Array(5).fill(0);
 
@@ -24,9 +24,11 @@ function RateStar(props) {
     const [hoverValue, setHoverValue] = useState(undefined);
 
 
+
     // fonction qui au clique sur l'etoile récupère les infos de l'utilisateur
     // si il est connécté on lance la requête pour envoyer sa note du film dans sa liste favoris
     function handleClick(value) {
+        console.log("🚀 ~ handleClick ~ value:", value)
         const rate = value;
         setCurrentValue(value)
         const userStorage = localStorage.getItem("user");
@@ -52,14 +54,15 @@ function RateStar(props) {
             const rate = value;
             const movieId = props.movie.id;
             // console.log('note :', rate); 
-            console.log('film :', movieId);
-
+            console.log('film movieID:', movieId);
+console.log("localStorage.getItem('user')).token : ", JSON.parse(localStorage.getItem('user')).token);
             const datas = {
                 rate,
                 movieId
             }
+            console.log("🚀 ~ addRateMovie ~ datas:", datas)
             try {
-                const request = axios.post(requests.fetchMovieRate, datas, {
+                axios.patch(requests.fetchMovieRate, datas, {
                     headers: {
                         "x-access-token": JSON.parse(localStorage.getItem('user')).token,
                     }
@@ -117,7 +120,7 @@ function RateStar(props) {
                                 marginRight: 10,
                                 cursor: "pointer"
                             }}
-                            color={(hoverValue || currentValue || props.movie) > index ? colors.orange : colors.grey}
+                            color={(hoverValue || currentValue || props.movie.rating) > index ? colors.orange : colors.grey}
                             onClick={() => handleClick(index + 1)}
                             onMouseOver={() => handleMouseOver(index + 1)}
                             onMouseLeave={handleMouseLeave}

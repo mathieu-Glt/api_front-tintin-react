@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react"
+import { useEffect, useState } from "react"  
 import './login.css';
 import { validateLogin } from "../utils/appValidateLogin";
 import { toast } from "react-toastify";
@@ -14,6 +14,9 @@ export default function Login() {
     // state qui stock champs email formulaire
     const [email, setEmail] = useState('');
 
+    // Récupération du csrf token (croos-site requerest forgery) 
+    const [csrfToken, setCsrfToken] = useState('')
+    
     // state qui stock qui intercepte erreur champs email formulaire
     const [errEmail, setErrEmail] = useState('');
 
@@ -28,6 +31,24 @@ export default function Login() {
 
     // state  passwordVisible défini à false
     const [passwordVisible, setPasswordVisible] = useState('password');
+
+
+    // fonction qui va récupérer le csrfToekn généré coté back
+    useEffect(() => {
+        // Récupération du jeton CSRF depuis le serveur
+        axios.get(`${api_url}/csrf-token`)
+        .then(res => {
+            console.log("🚀 ~ useEffect ~ res:", res)
+            console.log("🚀 ~ useEffect ~ res:", res.data.csrfToken)
+            setCsrfToken(res.data.csrfToken);
+        })
+        .catch(error => {
+            console.log(`Erreur while take  the csrf token : ${error}`)
+            
+        })
+    } , []);
+    
+    console.log("🚀 ~ Login ~ csrfToken:", csrfToken)
 
     // fonction qui change le state passwordVisible à visble au clique sur le bouton
     // du champs password du formulaire pour afficher/masquer le mot de passe
@@ -83,7 +104,11 @@ export default function Login() {
         }
 
         // console.log(body);
-        axios.post(`${api_url}/api/v1/user/login`, body)
+        axios.post(`${api_url}/api/users/login`, body, {
+            headers: {
+                'x-csrf-token': csrfToken
+            }
+        })
             .then((response) => {
 
                 console.log(response.data.msg);

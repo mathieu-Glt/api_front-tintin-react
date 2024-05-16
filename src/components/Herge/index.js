@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import requests from "../../configApi/Request";
 import axios from "axios";
 import ReactPlayer from "react-player/lazy";
+import { HashLink } from "react-router-hash-link";
 
 // composant d'affichage de la page sur l'auteur Hergé
 function Herge(props) {
@@ -29,18 +30,21 @@ function Herge(props) {
     ];
 
     return (
-        <div className="herge_container p-4">
-            <h1 className="bg-dark text-info mb-5">
+        <div className="herge_container">
+            <h1 className="title_film_herge">
                 L' HISTOIRE DE HERGE
             </h1>
-            <section className="card_movie_herge d-flex flex-column justify-content-center align-item-center text-bg-dark">
+            <section id="perso-haut"></section>
+            <HashLink className="bas_de_page" smooth to='#perso-bas'>👎 Bas de page 👎</HashLink>
+
+            <section className="card_movie_herge">
                 {/* affichage du résulat de la fonction  fetchDatabase pour renvoyer tous les données de Herge*/}
                 {hergeDatabase.map((hergeDatabase, index) => (
                     <div className="card_movie_container_herge" key={index}>
                         <div className="imageHerge">
                             <img className="image_herge1" alt="photo_herge" src={process.env.PUBLIC_URL + '/herge/' + hergeDatabase.picture} />
                         </div>
-                        <p className="movies__synopsis_herge card-text pt-4">
+                        <p className="movies__synopsis_herge">
                             Prénom: {hergeDatabase.firstName}
                         </p>
                         <p className="movies__synopsis_herge ">
@@ -80,16 +84,22 @@ function Herge(props) {
 
                     </div>
                 ))}
+                <div className="block1">
                 <h1>Hergé invité de l'émission "Apostrophes" </h1>
                 <p>Interviewé par le journaliste Bernard Pivot le 5 janvier 1979, Hergé nous raconte l'histoire de l'oeuvre Tintin... cette source provient des archives de l'INA.</p>
 
+                </div>
+
                 <div className="video-player-container">
+
                     {/* composant qui lit les medias url*/}
                     <ReactPlayer url="https://www.youtube.com/watch?v=Z3PzxHIeuyI" />
                 </div>
+                <div className="block1">
 
                 <h1>Un jeune lecteur invité dans les studio de Hergé</h1>
                 <p>En 1979, 4 ans avant le décès de Hergé, ce dernier avait eu la gentillesse de recevoir dans ses studios un jeune garçon pour lui expliquer son travail.</p>
+                </div>
 
                 <div className="video-player-container">
                     {/* composant qui lit les medias url*/}
@@ -98,6 +108,9 @@ function Herge(props) {
 
 
             </section>
+            <section id="perso-bas"></section>
+            <HashLink className=" hauts_de_page" alt="75x75" smooth to='#perso-haut'>👍 Hauts de page 👍</HashLink>
+
 
         </div>
     );

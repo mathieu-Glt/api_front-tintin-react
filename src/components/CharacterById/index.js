@@ -6,7 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import RateStar from "../RateStar";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import React from 'react'
-
+import './characterById.css'
 // composant qui affiche un personnage par son id ou son nom
 export default function CharacterById() {
 
@@ -70,30 +70,34 @@ export default function CharacterById() {
         <div>
             <h1 className="bg-dark text-primary mt-4">DETAILS PERSONNAGE</h1>
             <Link to="/characters">
-                <button>Retour Liste des personnages</button>
+                <button className='button_details_character'>Retour Liste des personnages</button>
             </Link>
 
-            <section className="card_movie d-flex flex-row flex-wrap justify-content-center p-4 pt-4">
+            <section className="card_movie">
 
                 {/* affichage du résulat de la fonction  fetchDatabase pour renvoyer le résultat du personnage id/nom*/}
                 {characterDatabase.map((character, index) => (
-                    <div className="movie_container p-4 card text-bg-dark mb-3 d-flex flex-column m-4 w-25 justify-content-center" key={index}>
+                    <div className="movie_container" key={index}>
                         <div className="image ">
                             <div className="movie" >
                                 <img className="image_database" alt="poster_perso" src={process.env.PUBLIC_URL + '/seriePerso/' + character.picture} />
                             </div>
-                            <p className="movies__synopsis card-text pt-4">
+
+                        </div>
+                        <div className='info_character'>
+                        <p className="movies__synopsis card-text pt-1 h3">
                                 Nom: {character.nom}
                             </p>
-                            <p className="movies__synopsis card-text pt-1">
+                            <p className="movies__synopsis card-text pt-1 h3">
 
                                 Prenom: {character.prenom}
                             </p>
+
+                        </div>
                             <p className="movies__synopsis card-text ">
                                 Profession: {character.profession}
                             </p>
 
-                        </div>
                         <p className="movies__synopsis card-text pt-4">
                             {character.personnage}
                             {character.personnage_suite}

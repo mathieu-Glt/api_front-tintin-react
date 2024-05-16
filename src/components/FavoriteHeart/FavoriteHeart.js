@@ -6,13 +6,15 @@ import axios from 'axios';
 
 // composant pour afficher film ajouté en favoris ou non
 export default function FavoriteHeart(props) {
+    console.log("🚀 ~ FavoriteHeart ~ props:", props)
     // si props.movie.favorite (film present dans mes favoris) existe affiche moi le coeur rempli sinon vide
     const Component = props.movie.favorite ? FavoriteIconFilled : FavoriteIconEmpty;
-    console.log(props.movie.favorite);
+    console.log("props.movie.favorite : ", props.movie.favorite);
     
     // fonction pour lancer l'affichage des films en favoris si utilisateur connecté
     function handleClick(e, movieId) {
         e.preventDefault();
+        console.log("🚀 ~ handleClick ~ movieId:", movieId)
 
         // récupération des informations de l'utilisateur dans le storage si elles sont présentes
         const userStorage = localStorage.getItem("user");
@@ -32,13 +34,15 @@ export default function FavoriteHeart(props) {
     }
     // fonction pour ajouter un  film dans sa liste de favoris
     async function postDatabase(id) {
+        console.log("🚀 ~ postDatabase ~ id:", id)
         //envoie de l'objet movie dans la requête 
         const movie = {
-            id,
+            id: id,
             movieTitle: props.movie.title
         }
+        console.log("🚀 ~ postDatabase ~ movie:", movie)
         try {
-            // si le film ne figure pas déja dans la liste lance la requête our l'ajouter
+            // si le film ne figure pas déja dans la liste lance la requête pour l'ajouter
             if (!props.movie.favorite) {
                 await axios.post(requests.fetchAddMovieFavories, movie, {
                     headers: {
@@ -47,7 +51,7 @@ export default function FavoriteHeart(props) {
                 })
                     .then((response) => {
                         console.log(response);
-                        if (response.status === 200) {
+                        if (response.OK) {
                             setTimeout(() => {
                                 toast.success(response.data.msg, { type: "warning", theme: "colored", autoClose: 5000 });
                             }, 3000);

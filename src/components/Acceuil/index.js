@@ -13,6 +13,8 @@ import { HashLink } from 'react-router-hash-link';
 import FavoriteHeart from "../FavoriteHeart/FavoriteHeart";
 import { toast } from "react-toastify";
 import DeleteMovie from "../../pages/DeleteMovie";
+// import Calendar from "../calendar/calendar";
+
 // import store from '../../store';
 
 // composant de la page "acceuil" pour afficher tous les films
@@ -24,6 +26,10 @@ function Acceuil(props) {
     // tableau qui recoit la reponse du hook useEffect de la fonction fetchAllCharacters pour récupérer tous les personnages de l'api
     const [movieDatabase, setMovieDatabase] = useState([]);
     
+    // tableau qui recoit la reponse du hook useEffect de la fonction fetchAllCharacters pour récupérer tous les personnages de l'api
+    const [movieDatabaseNotUser, setMovieDatabaseNotUser] = useState([]);
+
+    
     // booleen qui contrôle l'affichage de la video
     const [playMovie, setPlayMovie] = useState(null);
     
@@ -32,6 +38,7 @@ function Acceuil(props) {
     
     // booleen renvoyé pour la gestion de l'affichage de la fenêtre du film
     const [closeMovie, setCloseMovie] = useState(true);
+
 
 
     // fonction pour lancer l'affichage de la fenêtre du film
@@ -65,6 +72,7 @@ function Acceuil(props) {
         }
         
     }, [])
+
     
     // içi fonction qui renvoie les film de tintin avec l'indication de ses films en favoris en envoyant dans la fonction son token 
     async function fetchDatabase() {
@@ -87,55 +95,57 @@ function Acceuil(props) {
         
         console.log(request.data.results);
         
-        setMovieDatabase(request.data.results)
+        setMovieDatabaseNotUser(request.data.results)
     }
-    
-    console.log("🚀 ~ file: index.js:93 ~ Acceuil ~ movieDatabase:", movieDatabase)
+    console.log("🚀 ~ Acceuil ~ movieDatabase:", movieDatabase)
+
+    console.log("🚀 ~ Acceuil ~ movieDatabaseNotUser:", movieDatabaseNotUser)
     return (
         <div>
 
             {/* utilisation de la librairie react-router-hash-link pour ajouter une ancre et faciliter le scroll */}
-            <HashLink className="border-2 border border-danger bg-white text-dark p-2" smooth to='#tintin-bas'>Bas de page</HashLink>
-            <h1 className="title_acceuil bg-dark text-primary mt-4">TOUS LES FILMS TINTIN</h1>
-            <section className="card_movie d-flex flex-row flex-wrap justify-content-center p-4 pt-4">
+            <HashLink className="bas_de_page" smooth to='#tintin-bas'>👎 Bas de page 👎</HashLink>
+            <h1 className="title_acceuil">TOUS LES FILMS TINTIN</h1>
+            <section className="card_movie_section">
 
                 {/* ancre du scroll hauts de page*/}
                 <section id="tintin-haut"></section>
 
                 {/* affichage du résulat de la fonction  fetchDatabase pour renvoyer tous les films de tintin*/}
-                {movieDatabase.map((movie, index) => (
-                    <div className="card_movie_container" key={index}>
+                {movieDatabase.length > 0 ? (
+                    movieDatabase.map((movie, index) => (
+                    <div className="movie_container_favories" key={index}>
 
                         {/* composant favoris qui indique les films ajouter en favoris à l'utilisateur connécté qui posséde une liste de favoris*/}
                         <FavoriteHeart
                             movie={movie}
                         />
-                        <div className="rate-movie d-flex flex-row pb-2 justify-content-center mb-2">
 
                             {/* composant pour attribuer une note au films*/}
                             <div className="star">
                                 <RateStar
-                                    movie={movie.rating}
+                                    movie={movie}
                                 />
-                            </div>
                         </div>
-                        <div className="image ">
-                            <div className="movie" key={index}>
-                                <img className="image_database_acceuil" alt="poster_film_tintin" src={api_url + '/images/' + movie.picture} />
+                        <div className="image_acceuil ">
+                            <div className="movie_acceuil" key={index}>
+                                <img className="image_database_favoris" alt="poster_film_tintin" src={api_url + '/images/' + movie.picture} />
                             </div>
                         </div>
                         <p className="movies__synopsis_acceuil">
-                            {movie.synopsis}
+                            {movie.synopsis.substring(0, 300)}...
                         </p>
                         <div type="button" className="movies_buttons_acceuil">
+
+
                             <button className="card_button_acceuil_lecture" type="button" onClick={(e) => handleClickMovie(e, movie.movie)}>
                                 {/* au lancement du film le scroll se place là ou s'affichera la video grace à une ancre*/}
-                                <PlayCircleIcon /><HashLink className="text-dark" smooth to='#movie-tintin'>Lecture</HashLink>
+                                <PlayCircleIcon /><HashLink className="lecture" smooth to='#movie-tintin'>Lecture</HashLink>
                             </button>
 
                             {/* lien qui dirige vers l'affichage des détails du film  cliqué */}
                             <Link to={`/movies/${movie.slug}`}>
-                                <button className="card_button_acceuil_details bg-warning">
+                                <button className="card_button_acceuil_details">
                                     Voir les détails
                                 </button>
                             </Link>
@@ -154,15 +164,68 @@ function Acceuil(props) {
                                 movie={movie}
                                 onSuccess={fetchDatabase}
                             />}
+
                         </div>
                     </div>
 
-                ))}
+                ))
+            ) : (
+                movieDatabaseNotUser.map((movie, index) => (
+                    <div className="movie_container_favories" key={index}>
+                        <div className="image_acceuil ">
+                            <div className="movie_acceuil" key={index}>
+                                <img className="image_database_favoris" alt="poster_film_tintin" src={api_url + '/images/' + movie.picture} />
+                            </div>
+                        </div>
+
+                        <p className="movies__synopsis_acceuil">
+                            {movie.synopsis.substring(0, 300)}...
+                        </p>
+                            
+
+
+                        <div type="button" className="movies_buttons_acceuil">
+
+                            <button className="card_button_acceuil_lecture" type="button" onClick={(e) => handleClickMovie(e, movie.movie)}>
+                                {/* au lancement du film le scroll se place là ou s'affichera la video grace à une ancre*/}
+                                <PlayCircleIcon /><HashLink className="text-dark" smooth to='#movie-tintin'>Lecture</HashLink>
+                            </button>
+
+                            {/* lien qui dirige vers l'affichage des détails du film  cliqué */}
+                            <Link to={`/movies/${movie.slug}`}>
+                                <button className="card_button_acceuil_details ">
+                                    Voir les détails
+                                </button>
+                            </Link>
+
+
+                            {/* si je suis admin je peux accéder au boutton éditer le film */}
+                            {admin ? <Link to={`/editmovie/${movie.id}`}>
+                                <button type="button" className="card_button_acceuil_edit">
+                                    Editer le film
+                                </button>
+                            </Link> : null}
+
+                            {/* si je suis admin je peux accéder au boutton supprimer le film */}
+                            {admin && <DeleteMovie
+                                currentUrl={currentUrl}
+                                movie={movie}
+                                onSuccess={fetchDatabase}
+                            />}
+
+                        </div>
+
+
+
+                    </div>
+
+                ))
+            )}
 
                 {/* ancre du scroll bas de page*/}
                 <section id="tintin-bas"></section>
             </section>
-            <HashLink className="border-2 border border-info bg-white text-dark p-2" smooth to='#tintin-haut'>Hauts de page</HashLink>
+            <HashLink className="hauts_de_page" smooth to='#tintin-haut'>👍 Hauts de page 👍</HashLink>
 
 
             {/* si je suis admin je peux accéder au boutton ajouter un film */}

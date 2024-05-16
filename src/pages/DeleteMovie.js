@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { toast } from "react-toastify";
 import requests from '../configApi/Request';
 import { useNavigate } from 'react-router-dom';
-
+import './deleteMovie.css'
 
 // composant suppression boutton 
 export default function DeleteMovie(props) {
@@ -154,7 +154,7 @@ export default function DeleteMovie(props) {
 
     return (
         <div>
-            <button type="button" onClick={handleDeleteMovie} className="banner_button btn-sm bg-danger">
+            <button type="button" onClick={handleDeleteMovie} className="button_delete_favories">
                 Supprimer
             </button>
         </div>

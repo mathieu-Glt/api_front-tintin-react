@@ -7,17 +7,17 @@ const isAlpha = require("validator/lib/isAlpha").default;
 function validateRegister(fields) {
 
 
-    const { firstName, lastName, email, password } = fields
+    const { firstname, lastname, email, password } = fields
     const errors = {};
     Object.keys(fields).forEach(key => errors[key] = '')
     let success = true;
 
 
-    if (firstName.length === 0) {
+    if (firstname.length === 0) {
         errors.firstName = 'Ce champ ne doit pas être vide';
         success = false;
 
-    } else if (!isAlpha(firstName, 'fr-FR', { ignore: ' -' })) {
+    } else if (!isAlpha(firstname, 'fr-FR', { ignore: ' -' })) {
         errors.firstName = 'Ce type de format  n\'est pas accepté';
         success = false;
 
@@ -25,11 +25,11 @@ function validateRegister(fields) {
 
 
 
-    if (lastName.length === 0) {
+    if (lastname.length === 0) {
         errors.lastName = 'Ce champ ne doit pas être vide';
         success = false;
 
-    } else if (!isAlpha(lastName, 'fr-FR', { ignore: ' -' })) {
+    } else if (!isAlpha(lastname, 'fr-FR', { ignore: ' -' })) {
         errors.lastName = 'Ce type de format  n\'est pas accepté';
         success = false;
 

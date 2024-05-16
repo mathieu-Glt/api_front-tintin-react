@@ -1,6 +1,33 @@
 
+.hauts_de_page {
+    background-color: rgb(255, 96, 96);
+    color: black;
+    font-family: cursive;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
 
-@media screen and (min-width: 400px){
+h1.title_film_tintin {
+    background: rgb(49, 47, 47);
+    color:rgb(255, 102, 0);
+    margin-top: 10px;
+
+}
+
+
+.bas_de_page {
+    background-color: rgb(152, 69, 30);
+    color: black;
+    font-family: cursive;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+
+}
+/* TABLETTE - LAPTOP */
+
+@media screen and (min-width: 700px){
 
 .image_tintin {
     display: block;
@@ -47,6 +74,7 @@
     width: 50%;
     margin: 20px auto;
     border-radius: 10px;
+    font-size: 1.3rem;
 }
 
 
@@ -59,25 +87,32 @@
     flex-wrap: wrap;
     padding: 5px;
     background: rgb(19, 45, 86);
-    width: 100%;        
-    font-family: cursive;
+    width: 80%;        
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     border-radius: 30px;
-    margin: 1px;
+    margin: 10px auto;
     border: 5px solid rgb(14, 6, 6);
 }
 
 }
 
-@media screen and (max-width: 500px){
+
+/* MOBILE - TABLETTE */
+@media screen and (max-width: 700px){
+
+    .card_movie_tintin {
+        width: 80%;
+    }
     .card_movie_container_tintin {
         display: flex;
         flex-wrap: wrap;
         padding: 5px;
         background: rgb(19, 45, 86);
-        width: 100%;        
-        font-family: cursive;
+        color: white;
+        width: 80%;        
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         border-radius: 30px;
-        margin: 1px;
+        margin: 10px auto;
         border: 5px solid rgb(14, 6, 6);
     }
     

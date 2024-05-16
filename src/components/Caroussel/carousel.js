@@ -58,9 +58,9 @@ function Carousel() {
         async function fetchDatabase() {
             try {
                 const request = await axios.get(requests.fetchRandomMovie, {
-                    headers: {
-                        "x-access-token": JSON.parse(localStorage.getItem('user')).token,
-                    }
+                    // headers: {
+                    //     "x-access-token": JSON.parse(localStorage.getItem('user')).token,
+                    // }
                 });
                 setToggleVisible(false);
                 setTimeout(() => {
@@ -113,14 +113,14 @@ function Carousel() {
                 {/* affichage du résulat de la fonction  fetchDatabase pour renvoyer le film aléatoirement*/}
                 {movieThen.map((movie, index) => (
                     <div className={(toggleVisible ? "movie_container" : "movie_container transparent") + ""} key={index}>
-                        <div className="bloc-1 d-flex flex-wrap align-items-center ">
-                            <div className="d-flex flex-row justify-content-space-between w-100 ">
+                        <div className="">
+                            <div className="rate">
                                 {/* <a className="link-favourite" href="#"><FavoriteIcon style={{ color: "red", width: "40px", height: "40px" }} /></a> */}
                                 <FavoriteHeart
                                     movie={movie}
                                 />
 
-                                <div className="star d-flex flex-row pb-2 justify-content-center mb-2">
+                                <div className="">
                                     <RateStar
                                         movie={movie.rating}
                                     />
@@ -128,18 +128,17 @@ function Carousel() {
 
                             </div>
 
-                            <div className="image ">
                                 <div className="movie" >
                                     <img className="image_database" alt="poster_film_tintin" src={process.env.PUBLIC_URL + '/tintin/' + movie.picture} />
+                                    <p className="carousel_movies__synopsis">
+                                {movie.synopsis}
+                            </p>
+
                                 </div>
-                            </div>
 
                         </div>
 
-                        <div className="bloc-2 d-flex flex-column justify-content-center">
-                            <p className="carousel_movies__synopsis card-text p-4 h3">
-                                {movie.synopsis}
-                            </p>
+                        <div className="">
                             <div className="movies__buttons">
                                 <button type="button" onClick={(e) => handleClickMovie(e, movie.movie)} className="banner_button">
                                     <PlayCircleIcon /><HashLink className="text-dark" smooth to='#movie-tintin'>Lecture</HashLink>

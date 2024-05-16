@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import './nav.css';
 import { useState } from 'react';
-import MenuIcon from '@mui/icons-material/Menu'; import SearchBar from '../SearchBar/index';
+import MenuIcon from '@mui/icons-material/Menu'; 
+import SearchBar from '../SearchBar/index';
 import LinkGift from '../Link/LinkGift';
 import LinkNotif from '../Link/LinkNotif';
 import LogoNetflix from '../Logo/LogoNetflix';
@@ -25,9 +26,11 @@ import {
 import { color } from '@mui/system';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router';
+import Oclock from '../Clock/clock';
 
 // composant de la barre de navigation de l'application
 function Nav(props) {
+    console.log("🚀 ~ Nav ~ props:", props.userStorage)
     console.log(props.todos);
 
     // booléen gestion affichage de la barre de navigation
@@ -121,7 +124,7 @@ function Nav(props) {
 
 
 
-
+            <Oclock />
             <nav className={`${toggleMenu ? "navigation" : "navigation-none"}`}>
 
                 <div className='nav_linka'>
@@ -132,10 +135,18 @@ function Nav(props) {
                     <Link className="link_nav" style={{ color: `rgb(${colorRgbTintin.color})` }} to="/tintin">TINTIN</Link>
                     <Link className="link_nav" style={{ color: `rgb(${colorRgbHerge.color})` }} to="/herge">HERGE</Link>
                     <Link className="link_nav" style={{ color: `rgb(${colorRgbToprated.color})` }} to="/toprated">TOP RATED</Link>
-                    <Link className="link_nav" style={{ color: `rgb(${colorRgbToRegister.color})` }} to="/register">REGISTER</Link>
-                    <Link className="link_nav" style={{ color: `rgb(${colorRgbToLogin.color})` }} to="/login">LOGIN</Link>
+                    { !props.userStorage ? <Link className="link_nav" style={{ color: `rgb(${colorRgbToRegister.color})` }} to="/register">REGISTER</Link>:  null }
+                    { !props.userStorage ? <Link className="link_nav" style={{ color: `rgb(${colorRgbToLogin.color})` }} to="/login">LOGIN</Link>: null }
                     <Link className="link_nav" style={{ color: `rgb(${colorRgbToLogin.color})` }} to="/basket"><LinkNotif store={props.todos} /></Link>
                     <Cart className="link_nav" style={{ backgroundColor: `rgb(${colorRgbToLogin.color})` }} props={props.todos} />
+                    { /* Le link LinkGift apparait uniquement si l'utilisateur est connecté */}
+                    <div className="link_nav_avatar">
+                        {isLogged ? <LinkGift /> : null}
+                    <LinkAvatarIcon />
+
+                    </div>
+
+
 
 
                     {/* utilisation de la librairie  styled components pour les styles  */}
@@ -154,11 +165,6 @@ function Nav(props) {
 
                     </div>
 
-                    { /* Le link LinkGift apparait uniquement si l'utilisateur est connecté */}
-                    {isLogged ? <LinkGift /> : null}
-
-
-                    <LinkAvatarIcon />
 
                 </div>
             </nav>

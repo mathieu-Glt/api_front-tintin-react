@@ -82,6 +82,15 @@ function App() {
   // conserver à titre provisoire (gestion du state globale)
   const [todos, setTodos] = useState([]);
 
+  // booleen pour la gestion de l'affichage des bouttons du film affiché dans le carousel
+  const [admin, setAdmin] = useState(false);
+
+
+  // Récupereration du token si utilisateur connecté
+  const [user, setUser] = useState('')
+  console.log("🚀 ~ App ~ user:", user)
+
+
   // fonction pour lancer l'affichage de la fenêtre du film
   function handleClickMovie(e, url) {
     console.log(url);
@@ -147,6 +156,15 @@ function App() {
   useEffect(() => {
     store.subscribe(() => syncStore())
 
+    const user = localStorage.getItem('user');
+    console.log("🚀 ~ useEffect ~ user:", user);
+    if(user) {
+      const parseUser = JSON.parse(user);
+      console.log("🚀 ~ useEffect ~ parseUser:", parseUser);
+      setUser(parseUser.token);
+
+    }
+
   }, []);
 
   // récupération des datas du store
@@ -164,8 +182,8 @@ function App() {
         .then((response) => {
           console.log(response.data.results);
           const results = response.data.results;
-          console.log(results);
-          setCharacter(results);
+          console.log("results characters ", results);
+          // setCharacter(results);
         })
         .catch(function (error) {
           console.log(error);
@@ -182,6 +200,25 @@ function App() {
 
 
   };
+
+  // hook qui récupére les données du storage du navigateur si il y a un utilisateur connécté ou pas
+      useEffect(() => {
+        const userStorage = localStorage.getItem("user");
+        // console.log(userStorage);
+        const userData = JSON.parse(userStorage);
+        if (!userData) {
+            return
+        }
+        // console.log(userData.role);
+        if (userData.role === 'admin') {
+            setAdmin(!admin)
+        } else {
+            setAdmin(false)
+        }
+
+    }, [])
+
+    console.log("🚀 ~ App ~ admin:", admin)
 
   // fonction qui soumet le formulaire de la barre de recherche dans le composant Nav au clique sur la validation
   const handleForm = (e, searchValue) => {
@@ -225,6 +262,7 @@ function App() {
         {/* navbar */}
         {/*composant Nav ou se trouve le menu de navigation */}
         <Nav
+          userStorage = {user}
           movieStorage={movieTitle}
           handleInput={handleInput}
           data={inputValue}
@@ -247,46 +285,37 @@ function App() {
 
         {/*si une recherche dans la barre est faite alors l'affichage du résultat s'affiche */}
         {closeSearch ?
-          <div className='card_movie_container d-flex flex-wrap'>
+          <div className={`${toggleSearch ? 'card_movie_container_search ' : 'title-transparent'}`}>
 
-            <h1 className={`${toggleSearch ? 'title' : 'title-transparent'}`}>Résutat de la recherche pour : "{search}"
-              <button className="close-video" onClick={handleClickSearchClose}>x</button>
-            </h1>
+            <button className="close-video" onClick={handleClickSearchClose}>x</button>
+            <h1 className={`${toggleSearch ? 'title' : 'title-transparent'}`}>Résutat de la recherche pour : "{search}"</h1>
             {/* affichage du résulat de la barre de recherche */}
             {data.map((movie, index) => (
-              <div className='card-movie-search d-flex flex-row flex-wrap justify-content-center p-1 pt-2'>
-                <div className={`${toggleSearch ? 'movie_container_search' : 'movie_container_search-transparent mb-4'}`}>
-                  <div className='container'>
-                    <div className='row'>
-                      <div className='text-bg-dark mb-3 mt-3 me-3 ml-3 col-sm-10 ' key={index}>
+                <div className={`${toggleSearch ? 'movie_container_search' : 'movie_container_search-transparent'}`} key={index}>
                         <FavoriteHeart
                           movie={movie}
                         />
 
-                        <div className="d-flex flex-row pb-2 justify-content-center mb-2">
+                        <div className="star">
                           <RateStar
                             movie={movie}
                           />
                         </div>
 
-                        <div className='d-flex flex-row pb-2 justify-content-center mb-2'>
-                          <p className='movies__synopsis card-text pt-4 text-warning display-6'>{movie.title}</p>
+                        <div>
+                          <p className='movies__synopsis'>{movie.title}</p>
                         </div>
-                        <div className="movie" >
-                          <img className="image_database_acceuil" alt="image_film_tintin" src={process.env.PUBLIC_URL + '/tintin/' + movie.picture} />
+                        <div className="movie_acceuil" >
+                          <img className="image_database_favoris" alt="image_film_tintin" src={process.env.PUBLIC_URL + '/tintin/' + movie.picture} />
                         </div>
-                        <p className="movies__synopsis_search card-text pt-4">
+                        <p className="movies__synopsis_search">
                           {movie.synopsis}
                         </p>
-                        <button type="button" onClick={(e) => handleClickMovie(e, movie.movie)} className="banner_button btn-sm">
-                          <PlayCircleIcon /><HashLink className="text-dark" smooth to='#movie-tintin'>Lecture</HashLink>
+                        <button type="button" onClick={(e) => handleClickMovie(e, movie.movie)} className="banner_button">
+                          <PlayCircleIcon /><HashLink className="" smooth to='#movie-tintin'>Lecture</HashLink>
                         </button>
 
-                      </div>
-                    </div>
-                    </div>
                   </div>
-                </div>
             ))}
 
               </div> : null}
@@ -317,7 +346,7 @@ function App() {
 
             <div className='banner'>
               {/* banner */}
-              <Banner />
+              {/* <Banner /> */}
             </div>
             {/* video */}
 
@@ -332,7 +361,7 @@ function App() {
                 </div>
               </div>
               : null}
-          </Router>
+        </Router>
     </div>
   );
 }

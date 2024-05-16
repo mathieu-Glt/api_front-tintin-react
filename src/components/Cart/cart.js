@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import store from '../../store';
+import './cart.css';
 
 // composant qui affiche l'incrémentation ou décrémentation du panier
 export default function Cart(props) {
@@ -30,6 +31,6 @@ export default function Cart(props) {
 
 
     return (
-        <div><h1 className='bg-white border rounded-circle p-1 text-dark'>{index}</h1></div>
+        <div><h1 className='countCart'>{index}</h1></div>
     )
 }

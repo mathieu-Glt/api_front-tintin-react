@@ -98,15 +98,15 @@ function FavoriesList(props) {
     console.log("🚀 ~ file: index.js:98 ~ FavoriesList ~ movieFavorite:", movieFavorite)
     return (
         <div>
-            <h1 className="bg-dark text-danger mt-4">TOUS MES FILMS FAVORIS</h1>
+            <h1 className="title_film_favories">TOUS MES FILMS FAVORIS</h1>
             <div>
                 {/* si displayGuestMessage vaut 1 affiche moi le contenu de ce message sinon pas */}
-                <div className={`${displayGuestMessage === 1 ? 'displayMessage' : 'transDisplayMessage'}`}><img alt="image_dupont" src={process.env.PUBLIC_URL + '/assets/dupond.jpg'} /><p> C'était bien tenté ! Tu dois creer un compte pour enregistrer tes favoris !!😀</p></div>
+                <div className={`${displayGuestMessage === 1 ? 'displayMessage' : 'transDisplayMessage'}`}><img className="image_dupont1" alt="image_dupont" src={process.env.PUBLIC_URL + '/assets/dupond.jpg'} /><p> C'était bien tenté ! Tu dois creer un compte pour enregistrer tes favoris !!</p></div>
                 {/* si displayGuestMessage vaut 2 affiche moi le contenu de ce message sinon pas */}
-                <div className={`${displayGuestMessage === 2 ? 'displayMessage' : 'transDisplayMessage'}`}><img alt="image_duppont" src={process.env.PUBLIC_URL + '/assets/dupond.jpg'} /><p> Je dirais même plus  ! Tu dois creer un compte pour enregistrer tes favoris !!!😀</p></div>
+                <div className={`${displayGuestMessage === 2 ? 'displayMessage' : 'transDisplayMessage'}`}><img className="image_dupont2" alt="image_duppont" src={process.env.PUBLIC_URL + '/assets/dupond.jpg'} /><p> Je dirais même plus  ! Tu dois creer un compte pour enregistrer tes favoris !!!</p></div>
             </div>
 
-            <section className="card_movie d-flex flex-row flex-wrap justify-content-center p-4 pt-4">
+            <section className="card_movie_section_favories ">
 
                 {/* affichage du résulat de la fonction  fetchDatabase pour renvoyer tous les films de tintin listé en favoris dde l'utilisateur*/}
                 {movieFavorite.map((movie, index) => (
@@ -119,14 +119,14 @@ function FavoriesList(props) {
                                 movie={movie.rating}
                                 />
                         </div>
-                        <div className="image ">
-                            <div className="movie" >
+                        <div className="image_favories ">
+                            <div className="movie_favories" >
                                 {/* <img className="image_database" src={process.env.PUBLIC_URL + '/tintin/' + movie.picture} /> */}
                                 <img className="image_database_favoris" alt="poster_film_tintin" src={api_url + '/images/' + movie.picture} />
 
                             </div>
                         </div>
-                        <p className="movies__synopsis card-text pt-4">
+                        <p className="movies__synopsis_favories">
                             {movie.synopsis}
                         </p>
                         <div className="movies__buttons_favoris_lecture ">
@@ -138,7 +138,7 @@ function FavoriesList(props) {
 
                             {/* lien dirigeant vers les détails du film */}
                             <Link to={`/movies/${movie.slug}`}>
-                                <button className="card_button_acceuil_details bg-warning">
+                                <button className="card_button_acceuil_details">
                                     Plus
                                 </button>
                             </Link>

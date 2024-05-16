@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+
 }
 
 
@@ -11,23 +14,8 @@
 
 }
 
-.card_movie_container{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 4px;
-  background: black;
-  color: rgb(238, 96, 2);
-  font-family: cursive;
-  width: 90%;
-  border-radius: 30px;
-  border: 1px solid rgb(14, 6, 6);
-  margin: 10px;
-}
 
-body {
-  width: 100vw;
 
-}
 
 .test {
   height: 10vh;
@@ -69,17 +57,6 @@ a.link-favourite {
   opacity: 0;
 }
 
-.movie_container_search {
-  transition: all 1.5s ease;
-  opacity: 1;
-  margin: auto;
-  border: 3px solid black;
-  border-radius: 20px;
-  background-color: #ea6d40;
-  width: 70%;
-
-
-}
 
 .movie_container_search-transparent {
   transition: all 1.5s ease;
@@ -94,7 +71,7 @@ a.link-favourite {
 }
 
 body {
-  font-family: 'Roboto', 'Oxygen';
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   width: 100vw;
   font-family: 'Roboto';
   -webkit-font-smoothing: antialiased;
@@ -119,6 +96,28 @@ body {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+.movie_container_search {
+  transition: all 1.5s ease;
+  opacity: 1;
+  margin: 10px auto;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color:rgb(69, 30, 30);
+  width: 80%;
+  color: #ffbb00;
+  font-size: 1.4rem;
+  padding: 2%;
+
+
+}
+
+p.movies__synopsis {
+  color: #ffbb00;
+  font-size: 2rem;
+}
+
+
 
 .App-header {
   background-color: #282c34;
@@ -145,66 +144,23 @@ body {
   }
 }
 
-@media screen and (max-width: 1300px) {
-  h1.title-mainly {
-    margin-top: 800px;
-  }
-
-}
-
-
-@media screen and(max-width: 500px) {
-
-
-  .card-movie-search {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1px;
-    background: black;
-    color: rgb(238, 96, 2);
-    font-family: cursive;
-    width: 90%;
-    border-radius: 30px;
-    border: 1px solid rgb(14, 6, 6);
-    border: 2px solib orangered;
-
-  }
-
-  .card_movie_container{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 4px;
-    background: black;
-    color: rgb(238, 96, 2);
-    font-family: cursive;
-    width: 90%;
-    border-radius: 30px;
-    border: 1px solid rgb(14, 6, 6);
-    margin: 10px;
-}
-
-
-  /* .image_database_search {
-    width: 90%;
-    border-radius: 10px;
-  } */
-
-  .close-video {
-    width: 10%;
-  }
+@media screen and(min-width: 700px) {
 
   .movie_container_search {
-    font-family: cursive;
-    width: 90%;
-    border-radius: 30px;
-    border: 1px solid rgb(14, 6, 6);
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 4px;
-    background: black;
-    color: rgb(238, 96, 2);
+    width: 500px;
+  }
+}
+
+/* MOBILE - TABLETTE */
+@media screen and(max-width: 700px) {
 
 
+  button.close-video {
+    position: relative;
+    top: 10px;
+    left: 100px;
+    z-index: 1;
+    width: 10px
+   
   }
 }
