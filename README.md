@@ -1,70 +1,33 @@
 # ![icons8-film-94](https://github.com/mathieu-Glt/api_front-tintin-react/assets/84771497/e3f7ffec-0cba-474a-a2c9-a76a0ccfb2f4) App some movies ![icons8-film-94](https://github.com/mathieu-Glt/api_front-tintin-react/assets/84771497/e3f7ffec-0cba-474a-a2c9-a76a0ccfb2f4)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Purpose 
+An application that allow you watch movies, add them to your favorites and rate them. To be discovered...
 
-## Available Scripts
+## Launch the project locally
+This project is the front-end part of the application, so I'm thinking of taking the back-end part from my repo. It's called ApiMovieBackend. Once you've taken this directory locally. Here are the steps to follow
+For run the project locally, just follow these steps below : <br>
+this project is the part front-end of application so 
+Install all dependencies<br>
+  -> npm install<br>
+Once the dependencies are installed, start the development app with the following command<br>
+  -> npm run start<br>
 
-In the project directory, you can run:
+Then retrieve the ApiMovieBackend folder from the repo and install all dependencies in the  server root<br>
+ -> npm install<br> 
 
-### `npm start`
+And for start the server run this command<br>
+ -> npm run dev
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configuration 
+ Don't forgot of create file .env and add this inside the directory ApiMovieBackend
+ -> REACT_APP_API_URL=https://backoffice-tintin2-production.up.railway.app
 
-### `npm test`
+ ## Overview 
+![Capture d'écran 2024-05-17 150045](https://github.com/mathieu-Glt/api_front-tintin-react/assets/84771497/c93e14dc-73a0-45d4-8387-c89af84c0177) 
+![Capture d'écran 2024-05-17 150120](https://github.com/mathieu-Glt/api_front-tintin-react/assets/84771497/e7adbcbd-c5f7-4ebc-a6dd-e7ec66832e66) 
+![Capture d'écran 2024-05-17 150145](https://github.com/mathieu-Glt/api_front-tintin-react/assets/84771497/19225f36-b1d0-4941-858b-b5d677e3a3f7) 
+![Capture d'écran 2024-05-17 150246](https://github.com/mathieu-Glt/api_front-tintin-react/assets/84771497/0efdb088-481a-4b7b-a497-3fbb963d7150) 
+![Capture d'écran 2024-05-17 150408](https://github.com/mathieu-Glt/api_front-tintin-react/assets/84771497/088fe506-3265-486b-ba3a-b92450e5edbe)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
