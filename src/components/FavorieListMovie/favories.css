@@ -1,218 +1,197 @@
 .card_button_acceuil_lecture {
-    background-color: rgb(0, 106, 255);
-    border: none;
-    margin: 5px;
-    padding: 3px;
-    border-radius: 2px;
-    width: 100px
-
+  background-color: rgb(0, 106, 255);
+  border: none;
+  margin: 5px;
+  padding: 3px;
+  border-radius: 2px;
+  width: 100px;
 }
 
 .card_button_acceuil_details {
-    background-color: rgb(255, 208, 0);
-    border: none;
-    margin: 5px;
-    padding: 3px;
-    border-radius: 2px;
-
+  background-color: rgb(255, 208, 0);
+  border: none;
+  margin: 5px;
+  padding: 3px;
+  border-radius: 2px;
 }
 
 .video-player {
-    background: black;
-    height: 600px;
-    animation: color 10s ease infinite;
+  background: black;
+  height: 600px;
+  animation: color 10s ease infinite;
 }
 
 .card_movie_section_favories {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 @keyframes color {
-    0% {
-        background: #075687;
-    }
-    20% {
-        background: #136195
-    }
-    40% {
-        background: #0656a1
-    }
-    60% {
-        background: #025cb0
-    }
-    80% {
-        background: #0f3c65
-    }
-    100% {
-        background: #133e67
-    }
-    
+  0% {
+    background: #075687;
+  }
+  20% {
+    background: #136195;
+  }
+  40% {
+    background: #0656a1;
+  }
+  60% {
+    background: #025cb0;
+  }
+  80% {
+    background: #0f3c65;
+  }
+  100% {
+    background: #133e67;
+  }
 }
 
 .displayMessage {
-    display: flex;
-    flex-direction: row;
-    background: white;
-    color: black;
-    padding: 2%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  color: black;
+  padding: 2%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 .transDisplayMessage {
-    position: absolute;
-    left: 10px;
-    display: flex;
-    flex-direction: row;
-    background: white;
-    color: black;
-    font-size: 25px;
-    border-radius: 10px;
-    transition: all 2s ease;
-    opacity: 0;
-
+  position: absolute;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  color: black;
+  font-size: 25px;
+  border-radius: 10px;
+  transition: all 2s ease;
+  opacity: 0;
 }
 
 .title_film_favories {
-    background: rgb(49, 47, 47);
-    color:rgb(255, 0, 0);
-    margin-top: 10px;
-
+  background: rgb(49, 47, 47);
+  color: rgb(255, 0, 0);
+  margin-top: 10px;
 }
-
 
 div.img {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
-
 
 /* MOBILE*/
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
+  .image_dupont1 {
+    width: 200px;
+  }
 
-.image_dupont1 {
-    width: 200px
-}
-
-.image_dupont2 {
-    width: 200px
-}
-.movies__synopsis_favories {
+  .image_dupont2 {
+    width: 200px;
+  }
+  .movies__synopsis_favories {
     font-size: 1.2rem;
-    color:rgb(255, 208, 0)
-}
-.movie_container_favories{
+    color: rgb(255, 208, 0);
+  }
+  .movie_container_favories {
     padding: 4px;
     background: black;
     color: rgb(225, 212, 212);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     width: 90%;
     border-radius: 30px;
     border: 1px solid rgb(14, 6, 6);
     margin: auto;
-    margin-bottom: 20px
-
-}
-.image_database_favoris{
+    margin-bottom: 20px;
+  }
+  .image_database_favoris {
     width: 70%;
     margin: 10px auto;
     border-radius: 10px;
+  }
 
-}
-
-.star h2{
+  .star h2 {
     color: red;
-}
+  }
 
-.star{
+  .star {
     width: 50%;
     margin: 1px auto;
-}
+  }
 
-.movies__buttons_favoris{
+  .movies__buttons_favoris {
     display: flex;
     flex-wrap: wrap;
     /* // padding: 20px; */
     margin: 5px auto;
+  }
 
-}
-
-.movies__buttons_favoris_lecture {
+  .movies__buttons_favoris_lecture {
     width: 30px;
     margin: auto;
-}
+  }
 
-.movies__buttons_favoris{
+  .movies__buttons_favoris {
     display: flex;
     flex-wrap: wrap;
-
-}
-
+  }
 }
 
 /* TABLETTE - LAPTOP */
-@media screen and (min-width: 700px){
-    .card_movie_section_favories {
-        display: flex;
-        flex-wrap: wrap;
-    }
+@media screen and (min-width: 700px) {
+  .card_movie_section_favories {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .movies__synopsis_favories {
-        font-size: 1.2rem;
-        color:rgb(255, 208, 0)
-    }
-{
+  .movies__synopsis_favories {
+    font-size: 1.2rem;
+    color: rgb(255, 208, 0);
+  }
+}
 
-}    
-    
-    .movies__synopsis {
-        font-size: 1.3rem;
-    }
-    .movie_container_favories{
-        display: flex;
-        flex-wrap: wrap;
-        padding: 4px;
-        background: black;
-        color: white;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        width: 380px;
-        border-radius: 30px;
-        margin: 10px auto;
-    
-    }
-    .image_database_favoris{
-        width: 70%;
-        margin: 10px auto;
-        border-radius: 10px;
-    
-    }
-    
-    .star h2{
-        color: red;
-    }
-    
-    .star{
-        width: 50%;
-        margin: 1px auto;
-    }
-    
-    .movies__buttons_favoris{
-        display: flex;
-        flex-wrap: wrap;
-        margin: 5px auto;
-    
-    }
-    
-    .movies__buttons_favoris_lecture {
-        width: 30px;
-        margin: auto;
-    }
-    
-    .movies__buttons_favoris{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
+.movies__synopsis {
+  font-size: 1.3rem;
+}
+.movie_container_favories {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px;
+  background: black;
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  width: 380px;
+  border-radius: 30px;
+  margin: 10px auto;
+}
+.image_database_favoris {
+  width: 70%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
 
+.star h2 {
+  color: red;
+}
+
+.star {
+  width: 50%;
+  margin: 1px auto;
+}
+
+.movies__buttons_favoris {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px auto;
+}
+
+.movies__buttons_favoris_lecture {
+  width: 30px;
+  margin: auto;
+}
+
+.movies__buttons_favoris {
+  display: flex;
+  flex-wrap: wrap;
 }
