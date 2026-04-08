@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 
 // composant représentant l'entête de la page
 export default function Index(props) {
-  console.log(props);
 const location = useLocation();
 // constante qui stocke le message de bienvenue avec les informations de l'utilisateur
 const [message, setMessage] = useState('');

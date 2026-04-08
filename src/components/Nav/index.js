@@ -30,8 +30,6 @@ import Oclock from '../Clock/clock';
 
 // composant de la barre de navigation de l'application
 function Nav(props) {
-    console.log("🚀 ~ Nav ~ props:", props.userStorage)
-    console.log(props.todos);
 
     // booléen gestion affichage de la barre de navigation
     const [navBlack, setNavBlack] = useState(false);
@@ -68,9 +66,7 @@ function Nav(props) {
     });
     // si clique sur le menu burger les liens apparaitront
     const handleClickNav = () => {
-        console.log('click nav')
         toggleMenu ? setToggleMenu(false) : setToggleMenu(true);
-        console.log({ toggleMenu });
     };
 
     const colorRgbAcceuil = {

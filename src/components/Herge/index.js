@@ -8,7 +8,6 @@ import { HashLink } from "react-router-hash-link";
 
 // composant d'affichage de la page sur l'auteur Hergé
 function Herge(props) {
-    console.log(props);
     // tableau récupérant les datas de fetchDatabase sur Hergé de l'api
     const [hergeDatabase, setHergeDatabase] = useState([]);
 

@@ -13,7 +13,7 @@ import requests from '../../configApi/Request';
 export default function CharacterByName() {
 
     const params = useParams();
-    console.log(params.name);
+    // console.log(params.name);
     const name = params.name
 
     const [characterDatabase, setCharacterDatabase] = useState([]);

@@ -17,7 +17,7 @@ function Banner() {
             const request = await axios.get(requests.fetchAllTintinApi);
             
             //console.log(request);
-            console.log("banner results ", request.data.results)
+            // console.log("banner results ", request.data.results)
 
             // setMovieApi(
             //     request.data.results[
@@ -29,7 +29,7 @@ function Banner() {
         fetchDataApi();
     }, []);
 
-    console.log(movieApi);
+    // console.log(movieApi);
 
 
 

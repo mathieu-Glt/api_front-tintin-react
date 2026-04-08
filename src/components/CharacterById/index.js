@@ -15,7 +15,6 @@ export default function CharacterById() {
 
     // récupération du paramétre de l'url id
     const params = useParams();
-    console.log(params.id);
     let id = params.id;
 
     // const id = params.id
@@ -41,7 +40,7 @@ export default function CharacterById() {
 
             // récupération d'un personnage par son id / slug
             const request = await axios.get(requests.fetchCharacterById + id);
-            console.log(request.data.results);
+            // console.log(request.data.results);
 
             setCharacterDatabase(request.data.results)
         }
@@ -55,7 +54,7 @@ export default function CharacterById() {
         if (!userData) {
             return
         }
-        console.log(userData.role);
+        // console.log(userData.role);
         if (userData.role === 'admin') {
             setAdmin(!admin)
         } else {
@@ -64,7 +63,6 @@ export default function CharacterById() {
 
     }, [])
 
-    console.log(characterDatabase);
 
     return (
         <div>

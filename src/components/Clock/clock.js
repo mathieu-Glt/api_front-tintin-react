@@ -9,7 +9,6 @@ function Oclock() {
 
     useEffect(() => {
         const interval = setInterval(() => setValue(new Date()), 1000);
-        console.log("🚀 ~ useEffect ~ interval:", interval)
 
 
         return () => {

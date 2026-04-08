@@ -6,7 +6,6 @@ import Basket from '../Basket/basket';
 
 // composant lien du panier de l'application de la barre de navigation
 function ShoppingCart(props) {
-    console.log(props.store);
 
     return (
         <a href="/basket" className='nav_action_notif'>

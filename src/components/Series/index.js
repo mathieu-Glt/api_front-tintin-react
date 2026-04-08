@@ -13,11 +13,7 @@ import { useSelector, useDispatch } from 'react-redux';
 function Series(props) {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state);
-    // console.log('resultats de store', cart);
-    console.log(props.handleAddBasket);
-    console.log('resultats: ', props.data);
     const characters = props.data;
-    console.log(props);
 
     // tableau qui récupère tous les personnages de la requête fetchDatabase
     const [characterDatabase, setCharacterDatabase] = useState([]);
@@ -39,28 +35,22 @@ function Series(props) {
     // récupération des datas du store
     const syncStore = () => {
         setTodos(store.getState());
-        console.log(store.getState());
     };
 
     // hook qui récupére les données  de la requête pour avoir tous les personnages de l'api
     useEffect(() => {
         async function fetchDatabase() {
             const request = await axios.get(requests.fetchAllCharactersDatabase);
-            console.log(request.data.results);
             const results = request.data.results;
-            console.log(results);
             results.map((ob, index) => {
                 // console.log(ob.prenom+index);
                 // console.log('index : ' + index, 'firstname : ' + ob.prenom);
-                console.log(ob.prenom);
                 if (ob.prenom === 'n.c') {
                     setFirstname(false);
-                    console.log(ob.prenom);
                 } else {
                     setFirstname(true)
 
                 }
-                console.log(firstname);
             })
 
             setCharacterDatabase(request.data.results)
@@ -75,7 +65,6 @@ function Series(props) {
         if (!userData) {
             return
         }
-        console.log(userData.role);
         if (userData.role === 'admin') {
             setAdmin(!admin)
         } else {
@@ -115,7 +104,6 @@ function Series(props) {
 
     ];
 
-    console.log(firstname);
 
 
     return (

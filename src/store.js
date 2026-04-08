@@ -15,8 +15,8 @@ import { useSelector } from 'react-redux';
 
 
 const todosReducer = (state = [], action) => {
-    console.log(action.type);
-    console.log(action.payload);
+    // console.log(action.type);
+    // console.log(action.payload);
     switch (action.type) {
         case 'ADD_TODO':
             /**
@@ -29,7 +29,7 @@ const todosReducer = (state = [], action) => {
              passed as action.payload.
              */
             const itemDelete = state.find((todo) => todo.id === action.payload);
-            console.log(itemDelete);
+            // console.log(itemDelete);
             return [
                 // { ...itemDelete, ended: true },
                 ...state.filter((todo) => todo.id !== action.payload)
@@ -45,8 +45,8 @@ const todosReducer = (state = [], action) => {
 };
 
 const ErrorReducer = (state=[], action) => {
-    console.log(action.type);
-    console.log(action.payload);
+    // console.log(action.type);
+    // console.log(action.payload);
     switch (action.type) {
     case 'SUCCESS':
         /**

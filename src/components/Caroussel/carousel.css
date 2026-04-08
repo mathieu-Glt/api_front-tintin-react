@@ -1,10 +1,12 @@
 .movie_container {
   padding: 3%;
   background: rgb(63, 44, 44);
-  color:   #fdb12e;
+  color: #fdb12e;
   transition: opacity 0.5s 0.25s;
   opacity: 1;
   border-radius: 30px;
+  width: 90%;
+  margin: auto;
 }
 
 .movie_container.transparent {
@@ -16,22 +18,21 @@
   background: red;
 }
 
-
 /* MOBILE*/
 @media screen and (max-width: 700px) {
-  .movie_container{
+  .movie_container {
     display: flex;
     flex-direction: column;
   }
   .rate {
     margin-bottom: 15px;
   }
-  .star{
+  .star {
     width: 70%;
     margin: 0 auto;
   }
 
-  .image_database{
+  .image_database {
     width: 70%;
     margin: 0 auto;
   }
@@ -46,13 +47,11 @@
     font-size: 1.2rem;
     margin-top: 15px;
   }
-
-
 }
 
 /* TABLETTE */
 @media screen and (min-width: 700px) {
-  .movie_container{
+  .movie_container {
     display: flex;
     flex-wrap: wrap;
   }
@@ -61,22 +60,19 @@
     margin-bottom: 15px;
   }
 
-
   div.movie {
     display: flex;
     flex-direction: row;
     width: 100%;
-
   }
-  .star{
+  .star {
     width: 70%;
     margin: 0 auto;
   }
   .image {
     width: 100%;
-
   }
-  .image_database{
+  .image_database {
     width: 45%;
     margin: 0 auto;
   }
@@ -91,16 +87,12 @@
     width: 50%;
     font-size: 1.5rem;
     margin-top: 15px;
-
   }
-
 }
-
-
 
 /* LAPTOP */
 @media screen and (min-width: 1200px) {
-  .movie_container{
+  .movie_container {
     display: flex;
     flex-wrap: wrap;
   }
@@ -109,17 +101,15 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-
   }
-  .star{
+  .star {
     width: 70%;
     margin: 0 auto;
   }
   .image {
     width: 100%;
-
   }
-  .image_database{
+  .image_database {
     width: 30%;
     margin: 0 auto;
   }
@@ -134,11 +124,4 @@
     width: 70%;
     font-size: 1.5rem;
   }
-
 }
-
-
-
-
-
-

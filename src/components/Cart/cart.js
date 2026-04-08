@@ -10,11 +10,10 @@ export default function Cart(props) {
 
     // içi récupération des datas du state management de redux
     const displayCharacter = useSelector((state) => state)
-    console.log(displayCharacter.todosReducer);
+    // console.log(displayCharacter.todosReducer);
     for (let i = 0; i < displayCharacter.todosReducer.length + 1; i++) {
         // si film ajouté incrémentation de +1 
         // si film supprimé décrémentation de -1
-        console.log(i);
         index = i;
     }
 
@@ -26,7 +25,7 @@ export default function Cart(props) {
     // récupération des datas du store
     const syncStore = () => {
         // setTodos(store.getState());
-        console.log(store.getState());
+        // console.log(store.getState());
     };
 
 
