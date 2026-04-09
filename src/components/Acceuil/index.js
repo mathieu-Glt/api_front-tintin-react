@@ -70,7 +70,6 @@ function Acceuil(props) {
 
   // içi fonction qui renvoie les film de tintin avec l'indication de ses films en favoris en envoyant dans la fonction son token
   async function fetchDatabase() {
-
     const request = await axios.get(requests.fetchAllTintinDatabase, {
       headers: {
         Authorization: `Bearer ${JSON.parse(localStorage.getItem("user")).token}`,
@@ -87,7 +86,7 @@ function Acceuil(props) {
 
     // console.log(request.data.results);
 
-    setMovieDatabaseNotUser(request.data.results);
+    setMovieDatabaseNotUser(request.data.results[0]);
   }
   // console.log("🚀 ~ Acceuil ~ movieDatabase:", movieDatabase);
 
