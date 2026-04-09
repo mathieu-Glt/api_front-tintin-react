@@ -76,7 +76,7 @@ function Acceuil(props) {
       },
     });
     // console.log("fetchDatabase brut →", request.data);
-    setMovieDatabase(request.data.results);
+    setMovieDatabase(request.data.results[0]);
   }
 
   // içi fonction qui renvoie les film de tintin pour les utilisateurs non inscrits ou pas connécté
