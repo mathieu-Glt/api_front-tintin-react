@@ -76,7 +76,13 @@ function Acceuil(props) {
       setLoading(true);
       setError(null);
       const request = await axios.get(requests.fetchAllTintinDatabaseNotUser);
-      setMovieDatabaseNotUser(request.data.results[0] || request.data.results);
+      console.log(
+        "Acceuil ~ fetchDatabaseNotUser - request : ",
+        request.data.results,
+      );
+      if (request.data.results) {
+        setMovieDatabaseNotUser(request.data.results);
+      }
     } catch (err) {
       console.error("Erreur fetchDatabaseNotUser :", err);
       setError(
