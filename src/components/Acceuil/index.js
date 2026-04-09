@@ -60,7 +60,11 @@ function Acceuil(props) {
           Authorization: `Bearer ${JSON.parse(localStorage.getItem("user")).token}`,
         },
       });
-      setMovieDatabase(request.data.results[0]);
+      console.log(
+        "Acceuil ~ fetchDatabaseNotUser - request : ",
+        request.data.results,
+      );
+      setMovieDatabase(request.data.results);
     } catch (err) {
       console.error("Erreur fetchDatabase :", err);
       setError(
