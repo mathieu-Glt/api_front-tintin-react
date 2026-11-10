@@ -33,6 +33,7 @@ export default function ReactCalendar(props) {
       setAccessToken(tokenStorage);
     } else {
       setAccessToken(null);
+      return;
     }
   }, []);
 

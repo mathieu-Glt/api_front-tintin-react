@@ -60,10 +60,10 @@ function Acceuil(props) {
           Authorization: `Bearer ${JSON.parse(localStorage.getItem("user")).token}`,
         },
       });
-      console.log(
-        "Acceuil ~ fetchDatabaseNotUser - request : ",
-        request.data.results,
-      );
+      // console.log(
+      //   "Acceuil ~ fetchDatabaseNotUser - request : ",
+      //   request.data.results,
+      // );
       setMovieDatabase(request.data.results);
     } catch (err) {
       console.error("Erreur fetchDatabase :", err);
@@ -80,12 +80,12 @@ function Acceuil(props) {
       setLoading(true);
       setError(null);
       const request = await axios.get(requests.fetchAllTintinDatabaseNotUser);
-      console.log(
-        "Acceuil ~ fetchDatabaseNotUser - request : ",
-        request.data.results,
-      );
+      // console.log(
+      //   "Acceuil ~ fetchDatabaseNotUser - request : ",
+      //   request.data.results[0],
+      // );
       if (request.data.results) {
-        setMovieDatabaseNotUser(request.data.results);
+        setMovieDatabaseNotUser(request.data.results[0]);
       }
     } catch (err) {
       console.error("Erreur fetchDatabaseNotUser :", err);
