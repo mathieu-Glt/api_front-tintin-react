@@ -35,9 +35,9 @@ const requests = {
   // fetchMovieById: `${api_url}/api/v1/movies/`, // server api-bact-tintin
   fetchMovieById: `${api_url}/api/tintin/`,
   // fetchCharacterById: `${api_url}/api/v1/characters/`, // server api-bact-tintin
-  fetchCharacterById: `${api_url}/api/characters/`,
+  fetchCharacterById: `${api_url}/api/character/`,
   // fetchCharacterBySlug: `${api_url}/api/v2/character/`, // server api-bact-tintin
-  fetchCharacterBySlug: `${api_url}/api/characters/v2/`,
+  fetchCharacterBySlug: `${api_url}/api/character/v2/`,
   // fetchAddMovieFavories: `${api_url}/api/v1/favories`, // server api-bact-tintin
   fetchAddMovieFavories: `${api_url}/api/favories/tintin/`,
   // fetchMovieRate: `${api_url}/api/v1/movie/rate`, // server api-bact-tintin
